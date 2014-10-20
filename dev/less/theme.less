@@ -1,0 +1,67 @@
+// Getting the theme location:
+// =========================
+//
+// If you are using TEMPLATEPATH or bloginfo( 'template_directory' ).
+// Stop! You should be using the very useful get_template_directory() as seen in my examples above.
+// There are actually 4 variations of this function:
+//
+// get_template_directory()
+// returns the PATH to your theme folder. Useful for use inside PHP functions or includes.
+//
+// get_template_directory_uri()
+// echo get_template_directory_uri();
+// returns the URL to your theme folder. Useful for enqueueing and registering your scripts and styles and if you want to include and image.
+//
+// get_stylesheet_directory()
+// returns the PATH to the stylesheet folder. This will always point to the Child Theme if one is
+// in use whereas get_template_directory() will always point to the Parent Theme.
+//
+// get_stylesheet_directory_uri() returns the URL to the stylesheet folder.
+// As with the above this will always point to the Child Theme if one is in use.
+//
+// Getting your site URL:
+// ==========================
+//
+// It's a fairly common requirement, maybe you want to simply add a link to your home page?
+// Like getting the theme directory stop using bloginfo(). The example below gives a very basic example of how to do it correctly.
+// <a href="< ?php echo home_url( '/' ); ?>">This is a link to our home page</a>
+//
+// SRC:  http://code.tutsplus.com/tutorials/common-wordpress-development-mistakes-and-how-to-fix-them--wp-28204
+
+
+
+@import "variables.less";
+@import "../../bower_components/bootstrap/less/mixins.less";
+@import "cad/slide-menu.less";
+
+// STRUCTURE  save and edit all varables found at variables.less
+//  #section-name {
+//   	.class-name {
+//  	}
+//	}
+
+footer {
+	margin-top: 4rem;
+	background-color: @gray-lighter;
+}
+.meta {
+	margin-bottom: @padding-base-vertical;
+}
+#colophon {
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	background-color: @gray-darker;
+	color: @gray-lighter; 
+	a {
+		color: @gray-light;
+		&:hover{
+			color: @gray-lighter;
+		}
+	}
+	p {
+		padding-top: 1rem;
+	}
+	#customadesign {
+		text-align: right;
+	}
+}

@@ -1,0 +1,21 @@
+{
+  "name": "cad-bootstrap-kickstarter",
+  "version": "0.1.0",
+  "authors": [
+    "marcelbadua <marcel@customadesign.com>"
+  ],
+  "description": "kickstarting a new front-end wordpress theme project based on the custom Bootstrap build",
+  "keywords": [
+    "bootstrap",
+    "less",
+    "css",
+    "gulp",
+    "bower"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.2.0"
+  },
+
+  "license": "MIT",
+  "private": true
+}
