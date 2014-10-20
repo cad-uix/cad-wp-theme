@@ -5,10 +5,10 @@
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 		<main class="post col-sm-8" id="post-<?php the_ID(); ?>">
 			<article>
-				<header class="page-header">
+				<div class="page-header">
   				<?php the_title( '<h1>', '</h1>' ); ?>
   				<?php include ( get_template_directory() . '/inc/meta.php' ); ?>
-				</header>
+				</div>
 				<div class="entry">
 					<?php the_content(); ?>
 				</div>
