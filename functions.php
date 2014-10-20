@@ -1,6 +1,6 @@
 <?php
 
-define('DISALLOW_FILE_EDIT', TRUE);
+//define('DISALLOW_FILE_EDIT', TRUE);
 
 // disables wordpress bar on front end
 add_filter( 'show_admin_bar', '__return_false' );
