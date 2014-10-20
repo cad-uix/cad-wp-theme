@@ -8,9 +8,9 @@
 
 		<article class="post" id="post-<?php the_ID(); ?>">
 
-			<header class="page-header">
+			<div class="page-header">
   				<?php the_title( '<h1>', '</h1>' ); ?>
-			</header>
+			</div>
 			
 			<div class="entry">
 
