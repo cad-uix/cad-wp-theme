@@ -5,9 +5,9 @@ get_header(); the_post();?>
 <?php cad_breadcrumb(); ?>
   <div class="row">
     <main class="col-sm-8">
-      <header class="page-header">
+      <div class="page-header">
         <?php the_title( '<h1>', '</h1>' ); ?>
-      </header>
+      </div>
       <?php
       $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
       $blog_args = array(

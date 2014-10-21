@@ -9,7 +9,7 @@
 
  			<?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>
 			
-			<header class="page-header">
+			<div class="page-header">
 
 			<?php /* If this is a category archive */ if (is_category()) { ?>
 				<h1>Archive for the &#8216;<?php single_cat_title(); ?>&#8217; Category</h1>
@@ -34,7 +34,7 @@
 			
 			<?php } ?>
 
-			</header>
+			</div>
 
 
 			<?php while (have_posts()) : the_post(); ?>
