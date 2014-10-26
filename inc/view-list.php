@@ -23,6 +23,8 @@
     
         <?php get_template_part( 'inc/get', 'category' ); ?>
         
+        <?php get_template_part( 'inc/get', 'tags' ); ?>
+        
         
         <p><?php the_excerpt(); ?></p>
         
