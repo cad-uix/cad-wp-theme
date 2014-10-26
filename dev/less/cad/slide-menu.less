@@ -15,7 +15,7 @@ body {
 	margin: 5px;
 	font-size: 24px;
 	line-height: 1;
-	@media (max-width: @screen-xs){
+	@media (max-width: @screen-sm){
 		display: block;
 	}
 	&.left {
@@ -48,6 +48,26 @@ body {
 				color: @gray-lighter;
 				border-top: 1px solid @gray-dark;
 				&:hover {
+					text-decoration: none;
+					background-color: @gray-dark;
+				}
+			}
+			> ul {
+			    > li {
+			        > a {
+			            background-color: @gray-dark;
+			            color: white;
+			            &:hover {
+			                background-color: @gray-darker;   
+			            }
+			        }
+			    }
+			}
+		}
+		.open {
+		    > a {
+
+				&:hover, &:focus {
 					text-decoration: none;
 					background-color: @gray-dark;
 				}

@@ -1,3 +1,8 @@
+<?php
+/**
+* Template Name: Blog
+**/
+?>
 <?php 
 get_header(); the_post();?>
 

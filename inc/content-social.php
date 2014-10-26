@@ -1,34 +1,30 @@
-<?php
-	$options = get_option('cad_theme_options');
-?>
-
 <ul class="list-unstyled social">
 
 	<?php 
-	if(!empty($options['facebook'])) { ?>
-	<li><a href="http://facebook.com/<?php echo $options['facebook']; ?>" target="_blank">
-	<i class="fa fa-facebook-square fa-2x"></i> /<?php echo $options['facebook']; ?> </a>
+	if(!empty(cad_option('facebook'))) { ?>
+	<li><a href="http://facebook.com/<?php echo cad_option('facebook'); ?>" target="_blank">
+	<i class="fa fa-facebook-square fa-2x"></i> /<?php echo cad_option('facebook'); ?> </a>
 	</li>
 	<?php } ?>
 
 	<?php 
-	if(!empty($options['twitter'])) { ?>
-	<li><a href="http://twitter.com/<?php echo $options['twitter']; ?>" target="_blank">
-	<i class="fa fa-twitter-square fa-2x"></i> /<?php echo $options['twitter']; ?> </a>
+	if(!empty(cad_option('twitter'))) { ?>
+	<li><a href="http://twitter.com/<?php echo cad_option('twitter'); ?>" target="_blank">
+	<i class="fa fa-twitter-square fa-2x"></i> /<?php echo cad_option('twitter'); ?> </a>
 	</li>
 	<?php } ?>
 
 	<?php 
-	if(!empty($options['google-plus'])) { ?>
-	<li><a href="http://google-plus.com/<?php echo $options['twitter']; ?>" target="_blank">
-	<i class="fa fa-google-plus-square fa-2x"></i> /<?php echo $options['google-plus']; ?> </a>
+	if(!empty(cad_option('google-plus'))) { ?>
+	<li><a href="http://google-plus.com/<?php echo cad_option('twitter'); ?>" target="_blank">
+	<i class="fa fa-google-plus-square fa-2x"></i> /<?php echo cad_option('google-plus'); ?> </a>
 	</li>
   	<?php } ?>
 
   	<?php 
-	if(!empty($options['linkedin'])) { ?>
-	<li><a href="http://linkedin.com/<?php echo $options['twitter']; ?>" target="_blank">
-	<i class="fa fa-linkedin-square fa-2x"></i> /<?php echo $options['linkedin']; ?> </a>
+	if(!empty(cad_option('linkedin'))) { ?>
+	<li><a href="http://linkedin.com/<?php echo cad_option('twitter'); ?>" target="_blank">
+	<i class="fa fa-linkedin-square fa-2x"></i> /<?php echo cad_option('linkedin'); ?> </a>
 	</li>
 	<?php } ?>
 

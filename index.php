@@ -1,18 +1,24 @@
-<?php 
-get_header(); ?>
- 
- <div class="container">
-   
-   <?php cad_slideshow(); ?>
-
- </div>
-
-  <div class="container">
+<?php get_header(); ?>
+<div class="container">
+    <?php cad_slideshow(); ?>
+</div>
+<div class="container">
+    <h2>Latest Post</h2>
+    <?php
+    $args = array(
+        'posts_per_page' => 9,
+        'paged' => get_query_var('paged')
+    );
+    query_posts( $args );
+    if ( have_posts() ) : ?>
     <div class="row">
-      <div class="col-md-8">
-        <h2>Latest Post</h2>
-        <?php get_template_part( 'inc/content', 'latest' ); ?>
-      </div>
+    <?php while ( have_posts() ) : the_post(); ?>
+
+        <?php get_template_part( 'inc/view', 'grid' ); ?>
+
+    <?php endwhile; ?>
     </div>
-  </div>
+    <?php endif; ?>
+</div>
+
 <?php get_footer(); ?>

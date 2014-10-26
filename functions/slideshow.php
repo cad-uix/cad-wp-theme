@@ -101,13 +101,7 @@ function your_meta_box_html( $post ){
 
 function cad_slideshow($show_title = 'true')
   {
-    //get_template_directory_uri() . 
-    //include ( 'template-slideshow.php' );
-
-    //include ( '../template-slideshow.php' );
-
     get_template_part( 'inc/content', 'slideshow' );
-
   }
 
 endif;

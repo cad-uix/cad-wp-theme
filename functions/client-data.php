@@ -14,11 +14,16 @@ function theme_options_init(){
  * Load up the menu page
  */
 function theme_options_add_page() {
-	add_menu_page( __( 'Theme Options', 'cadtheme' ), __( 'Theme Options', 'cadtheme' ), 'edit_theme_options', 'theme_options', 'theme_options_do_page','',59 );
+	add_menu_page( __( 'Client Data', 'cadtheme' ), __( 'Client Data', 'cadtheme' ), 'edit_theme_options', 'theme_options', 'theme_options_do_page','',59 );
 }
 /**
  * Create the options page
  */
+function cad_option($entry) {
+    $options = get_option('cad_theme_options');
+    return $options[$entry];
+}
+
 function theme_options_do_page() {
 	global $select_options, $radio_options;
 
@@ -34,8 +39,15 @@ function theme_options_do_page() {
 		<?php endif; ?>
 
 		<form method="post" action="options.php">
-			<?php settings_fields( 'cad_options' ); ?>
-			<?php $options = get_option( 'cad_theme_options' ); ?>
+		
+		<?php settings_fields( 'cad_options' ); ?>
+		
+		<?php
+		$options = get_option('cad_theme_options');
+       // global $options;
+
+            ?>
+
 
 			<table class="form-table">
 

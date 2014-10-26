@@ -1,25 +1,17 @@
-# Parent Theme For Custom A Design Wordpress
-Exclusively used by Custom A Design and Linkage UIX Design Team
+# Welcome to your new Koding workspace
 
-## Instructions
+This workspace, which lives inside the 'Workspaces' folder of your
+home directory, is the place where you can store all relevant and
+related files to this project.
 
-Clone repository
+Workspaces help keep your projects organized. You can create any
+number of sub-folders within this workspace in order to further
+organize your work.
 
-	git clone git@github.com:cad-uix/cad-parent.git
+As you move back and forth between your workspaces, Koding will try
+and remember everything about each workspace. This includes things
+like IDE settings, files open, Terminals open, etc.
 
-install dependencies * must have node, less, bower and gulp installed
+You can create as many new workspaces as you need on your VM.
 
-Download Bootstrap Files via Bower
-    
-	bower install
-
-Download node modules
-
-	npm install
-
-Run gulp
-
-	gulp
-
-## License
-http://customadesign.com Custom A Design
+Enjoy and Happy Koding!

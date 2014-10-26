@@ -43,7 +43,7 @@
 				
 						<h3 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h3>
 					
-						<?php include (TEMPLATEPATH . '/inc/meta.php' ); ?>
+					    <?php get_template_part( 'inc/content', 'meta' ); ?>
 
 						<div class="entry">
 							<?php the_excerpt(); ?>

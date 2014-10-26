@@ -7,7 +7,7 @@
 			<article>
 				<div class="page-header">
   				<?php the_title( '<h1>', '</h1>' ); ?>
-  				<?php include ( get_template_directory() . '/inc/meta.php' ); ?>
+  				<?php get_template_part( 'inc/content', 'meta' ); ?>
 				</div>
 				<div class="entry">
 					<?php the_content(); ?>

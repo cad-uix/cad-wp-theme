@@ -1,23 +1,22 @@
-<?php
-	$options = get_option('cad_theme_options');
-?>
 <address>
 	
 	<strong><?php bloginfo( 'name'); ?></strong> <br>
 
 	<?php 
-	if(!empty($options['address'])) { ?>
-	<?php echo $options['address']; ?> <br>
+	if(!empty(cad_option('address'))) { ?>
+	<?php echo cad_option('address'); ?> <br>
+	<?php } ?>
+    
+	<?php 
+	if(!empty(cad_option('number'))) { ?>
+	Phone: <a href="call:<?php echo cad_option('number'); ?>"> 
+	<?php echo cad_option('number'); ?> </a><br>
 	<?php } ?>
 
 	<?php 
-	if(!empty($options['number'])) { ?>
-	Phone: <a href="call:<?php echo $options['number']; ?>"> <?php echo $options['number']; ?> </a><br>
-	<?php } ?>
-
-	<?php 
-	if(!empty($options['email'])) { ?>
-	Phone: <a href="mailto:<?php echo $options['email']; ?>"> <?php echo $options['email']; ?> </a><br>
+	if(!empty(cad_option('email'))) { ?>
+	Email: <a href="mailto:<?php echo cad_option('email'); ?>"> 
+	<?php echo cad_option('email'); ?> </a><br>
 	<?php } ?>
 	
 </address>

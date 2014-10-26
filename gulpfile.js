@@ -67,4 +67,9 @@ gulp.task('bower-copy', function(){
 });
 
 
-gulp.task('default', ['bower-copy', 'style', 'script', 'browser-sync', 'watch']);
+gulp.task('default', [
+    'bower-copy', 
+    'style', 
+    'script', 
+    //'browser-sync', 
+    'watch']);

@@ -3,7 +3,7 @@
 //   <i class="fa fa-reorder"></i>
 // </button>
 
-(function($){
+jQuery(function($){
 
   $.fn.slideMenu = function() {
     var target = $(this).attr('data-target');
@@ -18,11 +18,10 @@
     $(target).removeClass('load');
 
 	$(this).click( function() {
-    	$(target).toggleClass('move');
-    	$(body).toggleClass('move');
-    	return false;
+        $(target).toggleClass('move');
+        $(body).toggleClass('move');
+        return false;
 	});
   };
-})(jQuery);
-
-jQuery('.slide-menu-toggle').slideMenu();
+  $('.slide-menu-toggle').slideMenu();
+});
