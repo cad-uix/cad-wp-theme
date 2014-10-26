@@ -1,6 +1,6 @@
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
     
-    <article id="post-<?php the_ID(); ?>">
+    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
         
         <div class="page-header">
             <?php the_title( '<h1>', '</h1>' ); ?>

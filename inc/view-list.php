@@ -1,5 +1,4 @@
-
-    <div class="entry col-xs-12" id="post-<?php the_ID(); ?>">
+ <div  id="post-<?php the_ID(); ?>" <?php post_class('col-xs-12 view-list'); ?>>
     
         <?php if ( has_post_thumbnail() ) { ?>
         <a class="pull-left" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
@@ -8,7 +7,7 @@
         <?php } else {
         ?>
         <a class="pull-left" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-             <img src="http://placehold.it/150x150&text=blog" class="img-thumbnail">
+             <img src="http://placehold.it/150x150&text=blog" width="150" height="150" class="img-thumbnail">
         </a>
         <?php
         }?>
@@ -17,22 +16,22 @@
             <?php the_title("<h4>", "</h4>"); ?>
         </a>
     
-        <span><?php the_author(); ?></span>
         
-         <?php get_template_part( 'inc/get', 'meta' ); ?>
-    
+        
+        <span class="pull-right">
+        
         <?php get_template_part( 'inc/get', 'category' ); ?>
         
         <?php get_template_part( 'inc/get', 'tags' ); ?>
         
+        </span>
+        
+        <span>Posted by: <?php the_author(); ?></span> on <?php get_template_part( 'inc/get', 'meta' ); ?>
+        
         
         <p><?php the_excerpt(); ?></p>
         
-        <p><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+        <p><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="btn btn-primary btn-xs">
             + Read More
         </a></p>
-        
-       
-        
-    <hr>
     </div>

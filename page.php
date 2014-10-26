@@ -1,27 +1,25 @@
 <?php get_header(); ?>
-	
-	<main class="container">
-	
+
+<div class="container">
+
 	<?php cad_breadcrumb(); ?>
-	
-	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-		<article class="post" id="post-<?php the_ID(); ?>">
+	<div class="row">
+		
+		<main class="col-sm-8">
 
-			<div class="page-header">
-  				<?php the_title( '<h1>', '</h1>' ); ?>
-			</div>
-			
-			<div class="entry">
+	     <?php get_template_part( 'inc/content', 'page' ); ?>
 
-				<?php the_content(); ?>
+		</main>
+		
+		<aside class="col-sm-4">
 
-			</div>
+			<?php get_sidebar(); ?>
 
-		</article>
+		</aside>
 
-		<?php endwhile; endif; ?>
-	
-	</main>
+	</div>
+
+</div>
 
 <?php get_footer(); ?>

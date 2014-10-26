@@ -14,13 +14,7 @@
 		
 		<aside class="col-sm-4">
 
-			<small>
-
-				<h3>Latest Post</h3>
-
-				<?php get_template_part( 'inc/content', 'latest' ); ?>
-
-			</small>
+			<?php get_sidebar(); ?>
 
 		</aside>
 

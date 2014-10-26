@@ -3,11 +3,11 @@
     <div class="row">
       <div class="col-sm-4">
         <h4>Contact Us</h4>
-          <?php get_template_part( 'inc/content', 'address' ); ?>
+          <?php get_template_part( 'inc/get', 'address' ); ?>
       </div>
       <div class="col-sm-4">
           <h4>Connect with us</h4>
-          <?php get_template_part( 'inc/content', 'social' ); ?>
+          <?php get_template_part( 'inc/get', 'social' ); ?>
       </div>
       <div class="col-sm-4">
         <h4>Quick Links</h4>
