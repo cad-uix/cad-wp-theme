@@ -8,8 +8,11 @@
         
         <div class="meta">
             <span><?php the_author(); ?></span>
+            
             <?php get_template_part( 'inc/get', 'meta' ); ?>
+            <br>
             <?php get_template_part( 'inc/get', 'category' ); ?>
+            <?php get_template_part( 'inc/get', 'tags' ); ?>
             <hr>  
         </div>
         
