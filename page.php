@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 	
-	<main class="container page">
+	<main class="container">
 	
 	<?php cad_breadcrumb(); ?>
 	

@@ -1,22 +1,36 @@
-<div class="entry">
 
-
-
-<div class="col-sm-9">
-<h3 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h3>
-<?php get_template_part( 'inc/content', 'meta' ); ?>
-<?php the_excerpt(); ?>
-<a href="<?php the_permalink(); ?>">Read More</a>	
-</div>
-
-<div class="col-sm-3">
-<?php if ( has_post_thumbnail() ) { ?>
-<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-<?php the_post_thumbnail('thumbnail', array( 'class' => 'img-responsive')); ?>
-</a>
-<?php } ?>	
-</div>
-
-
-
-</div>
+    <div class="entry col-xs-12" id="post-<?php the_ID(); ?>">
+    
+        <?php if ( has_post_thumbnail() ) { ?>
+        <a class="pull-left" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+            <?php the_post_thumbnail('thumbnail', array('class' => 'img-thumbnail')); ?>
+        </a>
+        <?php } else {
+        ?>
+        <a class="pull-left" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+             <img src="http://placehold.it/150x150&text=blog" class="img-thumbnail">
+        </a>
+        <?php
+        }?>
+        
+        <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+            <?php the_title("<h4>", "</h4>"); ?>
+        </a>
+    
+        <span><?php the_author(); ?></span>
+        
+         <?php get_template_part( 'inc/get', 'meta' ); ?>
+    
+        <?php get_template_part( 'inc/get', 'category' ); ?>
+        
+        
+        <p><?php the_excerpt(); ?></p>
+        
+        <p><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+            + Read More
+        </a></p>
+        
+       
+        
+    <hr>
+    </div>

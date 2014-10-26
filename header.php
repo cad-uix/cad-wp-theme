@@ -52,19 +52,20 @@
 
 <?php get_template_part( 'inc/navigation', 'off' ); ?>
 
-  <div id="page-wrap">
+<div id="page-wrap">
 
-  <button type="button" class="slide-menu-toggle" data-direction="right" data-target="#slide-menu">
-    <i class="fa fa-reorder"></i>
-  </button>
+    <button type="button" class="slide-menu-toggle" data-direction="right" data-target="#slide-menu">
+        <i class="fa fa-reorder"></i>
+    </button>
 
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
 
-  <header>
-    <div class="container">
+                <a class="navbar-brand" href="<?php bloginfo("url"); ?>"><?php bloginfo( 'name'); ?></a>
+            </div>
 
-          <a class="h2 pull-left" href="<?php bloginfo("url"); ?>"><?php bloginfo( 'name'); ?></a>
+            <?php cad_get_menu( 'header-navigation', 'nav navbar-nav hidden-xs', '3'); ?>
 
-           <?php cad_get_menu( 'header-navigation', 'nav nav-pills hidden-xs', '3'); ?>
-
-      </div>
-  </header>
+        </div>
+    </nav>

@@ -20,6 +20,7 @@ add_action( 'wp_enqueue_scripts', 'cad_scripts_and_styles' );
 // disables wordpress bar on front end
 add_filter( 'show_admin_bar', '__return_false' );
 
+require_once('functions/post.php');
 require_once('functions/slideshow.php');
 require_once ('functions/comments.php' );
 require_once ('functions/featured-image.php' );
