@@ -53,19 +53,8 @@
 <?php get_template_part( 'inc/navigation', 'off' ); ?>
 
 <div id="page-wrap">
-
-    <button type="button" class="slide-menu-toggle" data-direction="right" data-target="#slide-menu">
+   <button type="button" class="slide-menu-toggle" data-direction="right" data-target="#slide-menu">
         <i class="fa fa-reorder"></i>
     </button>
 
-    <nav class="navbar navbar-default" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-
-                <a class="navbar-brand" href="<?php bloginfo("url"); ?>"><?php bloginfo( 'name'); ?></a>
-            </div>
-
-            <?php cad_get_menu( 'header-navigation', 'nav navbar-nav hidden-xs', '3'); ?>
-
-        </div>
-    </nav>
+    <?php get_template_part( 'content', 'header' ); ?>

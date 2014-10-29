@@ -4,21 +4,15 @@
 
 	<?php cad_breadcrumb(); ?>
 
-	<div class="row">
-		
-		<main class="col-sm-8">
 
-	     <?php get_template_part( 'inc/content', 'single' ); ?>
+		
+		<main >
+
+	     <?php get_template_part( 'content', 'single' ); ?>
 
 		</main>
 		
-		<aside class="col-sm-4">
 
-			<?php get_sidebar(); ?>
-
-		</aside>
-
-	</div>
 
 </div>
 
