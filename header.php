@@ -50,7 +50,9 @@
 <![endif]-->
 
 
-<?php get_template_part( 'inc/navigation', 'off' ); ?>
+<div id="slide-menu" class="load">
+  <?php cad_get_menu( 'off-canvas-navigation', 'nav'); ?>
+</div>
 
 <div id="page-wrap">
    <button type="button" class="slide-menu-toggle" data-direction="right" data-target="#slide-menu">

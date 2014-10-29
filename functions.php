@@ -2,12 +2,14 @@
 
 // general enqueue sciprts and styles
 function cad_scripts_and_styles() {
+    wp_register_script( 'google-map', 'http://maps.googleapis.com/maps/api/js?sensor=false&amp;extension=.js&amp;output=embed', array( 'jquery' ), 1.0, true );
     wp_register_script( 'bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js', array( 'jquery' ), 1.0, true );
     wp_register_script( 'theme', get_template_directory_uri() . '/js/theme.js', array( 'jquery' ), 1.0, true );
 
     wp_register_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css', null, 1.0, 'screen' );
     wp_register_style( 'theme', get_template_directory_uri() . '/css/theme.css', null, 1.0, 'screen' );
 
+    wp_enqueue_script( 'google-map' );
     wp_enqueue_script( 'bootstrap' );
     wp_enqueue_script( 'theme' );
 

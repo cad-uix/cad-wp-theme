@@ -1,8 +1,16 @@
 <?php get_header(); ?>
 
-	<?php if (have_posts()) : ?>
+<div class="container">
 
-		<h2>Search Results</h2>
+	<?php cad_breadcrumb(); ?>
+
+
+<?php if (have_posts()) : ?>
+
+
+<div class="page-header">
+			<h1>Search Results</h1>
+</div>
 
 
 		<?php while (have_posts()) : the_post(); ?>
@@ -28,6 +36,13 @@
 
 	<?php endif; ?>
 
-<?php get_sidebar(); ?>
+
+		
+
+
+</div>
+
+	
+
 
 <?php get_footer(); ?>
