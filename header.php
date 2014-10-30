@@ -55,8 +55,11 @@
 </div>
 
 <div id="page-wrap">
-   <button type="button" class="slide-menu-toggle" data-direction="right" data-target="#slide-menu">
-        <i class="fa fa-reorder"></i>
-    </button>
+  
+  <a href="#" class="back-to-top"><i class="fa fa-angle-up fa-2x"></i> Back to Top</a>
+  
+  <button type="button" class="slide-menu-toggle" data-direction="right" data-target="#slide-menu">
+    <i class="fa fa-reorder"></i>
+  </button>
 
-    <?php get_template_part( 'content', 'header' ); ?>
+  <?php get_template_part( 'content', 'header' ); ?>

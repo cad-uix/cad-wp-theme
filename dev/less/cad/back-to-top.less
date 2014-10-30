@@ -1,0 +1,32 @@
+.back-to-top {
+
+    position: fixed;
+
+    bottom: 4rem;
+
+    left: 100%;
+
+    text-decoration: none;
+
+    color: @gray-light;
+
+    display: block;
+    
+    z-index: 2050;
+    
+    .transition(all 0.25s linear);
+    
+    &.show {
+    
+        left: 97%;
+
+    }
+    
+    &:hover {
+
+        color: @gray;
+
+        text-decoration: none;
+
+    }
+}

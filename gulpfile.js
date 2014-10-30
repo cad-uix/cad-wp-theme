@@ -37,7 +37,7 @@ gulp.task('script', function () {
   gulp.src(['./dev/js/*.js'])
     .pipe(jshint())
     .pipe(jshint.reporter('default'))
-    .pipe(concat('theme.js'))
+    .pipe(concat('cad-parent-script.js'))
     .pipe(gulp.dest('./js'));
 });
 
