@@ -101,7 +101,7 @@ function your_meta_box_html( $post ){
 
 function cad_slideshow($show_title = 'true')
   {
-    get_template_part( 'inc/content', 'slideshow' );
+    get_template_part( 'content', 'slideshow' );
   }
 
 endif;
