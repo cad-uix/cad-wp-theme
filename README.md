@@ -1,4 +1,4 @@
-# Parent Theme For Custom A Design Wordpress
+# CAD Kickstarter Theme for Wordpress
 
 Exclusively used by Custom A Design and Linkage UIX Design Team
 
