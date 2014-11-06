@@ -20,8 +20,6 @@
         
         <?php include (TEMPLATEPATH . '/inc/meta.php' ); ?>
         
-        <span>Posted by: <?php the_author(); ?></span> on <?php get_template_part( 'inc/get', 'meta' ); ?>
-        
         
         <p><?php the_excerpt(); ?></p>
         

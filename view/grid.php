@@ -16,9 +16,8 @@
             <?php the_title("<h4>", "</h4>"); ?>
         </a>
        
-        <small>
-        <span>Posted by: <?php the_author(); ?></span> on <?php get_template_part( 'inc/get', 'meta' ); ?>
-        </small>
+      <?php include (TEMPLATEPATH . '/inc/meta.php' ); ?>
+        
         
         <p><?php the_excerpt(); ?></p>
         
