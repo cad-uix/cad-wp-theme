@@ -1,5 +1,3 @@
-'use strict';
-
 //npm install --save-dev browser-sync gulp gulp-concat gulp-uglify gulp-jshint gulp-less gulp-csscomb gulp-minify-css gulp-notify
 
 var   gulp            = require('gulp'),
@@ -15,7 +13,6 @@ var   gulp            = require('gulp'),
 
 var   virtualHost     = '// PUT YOUR VIRTUAL HOST HERE //';
 
-
 var handleErrors = function() {
   notify.onError({
   title: "Compile Error",
@@ -25,7 +22,9 @@ var handleErrors = function() {
 };
 
 gulp.task('style', function () {
-  gulp.src(["./dev/less/bootstrap.less"])
+  gulp.src([
+    "./dev/less/bootstrap.less"
+    ])
     .pipe(less())
     .on('error', handleErrors)
     .pipe(csscomb())
@@ -37,7 +36,7 @@ gulp.task('script', function () {
   gulp.src(['./dev/js/*.js'])
     .pipe(jshint())
     .pipe(jshint.reporter('default'))
-    .pipe(concat('main.js'))
+    .pipe(concat('theme.js'))
     .pipe(gulp.dest('./js'));
 });
 
@@ -55,15 +54,16 @@ gulp.task('browser-sync', function () {
 
   browserSync.init(
     files, {
-      proxy: virtualHost,
-      logPrefix: "CAD-UIX"
+      proxy: virtualHost
     }
   );
 });
 
 gulp.task('bower-copy', function(){
-  gulp.src('./bower_components/bootstrap/fonts/**/*.*')
+  gulp.src('./bower_components/bootstrap/dist/fonts/**/*.*')
   .pipe(gulp.dest('./fonts'));
+  gulp.src('./bower_components/bootstrap/dist/js/**/*.*')
+  .pipe(gulp.dest('./js'));
 });
 
 gulp.task('default', [

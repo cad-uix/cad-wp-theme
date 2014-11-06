@@ -16,6 +16,10 @@ Download node modules
 
     npm install
 
+Put your Virtual Host on gulpfile.js line #16
+
+	var virtualHost = '// PUT YOUR VIRTUAL HOST HERE //'; 
+
 Run gulp
 
     gulp

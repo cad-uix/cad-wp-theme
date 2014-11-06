@@ -11,7 +11,7 @@
 function enqueue_scripts_and_styles() {
     
     wp_register_script( 'google-map', 'http://maps.googleapis.com/maps/api/js?sensor=false&amp;extension=.js&amp;output=embed', array( 'jquery' ), 1.0, true );
-    wp_register_script( 'bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js', array( 'jquery' ), 1.0, true );
+    wp_register_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), 1.0, true );
     wp_register_script( 'main', get_template_directory_uri() . '/js/main.js', array( 'jquery' ), 1.0, true );
 
     wp_register_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css', null, 1.0, 'screen' );
@@ -61,7 +61,7 @@ require get_template_directory() . 'functions/pagination.php';
 /**
  * Bootstrap Nav Walker
  */
-require get_template_directory() . 'vendor/wp_bootstrap_navwalker.php';
+require get_template_directory() . 'functions/wp_bootstrap_navwalker.php';
 
 /**
  *

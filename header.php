@@ -46,7 +46,7 @@
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
     <link rel="shortcut icon" href="<?php bloginfo("template_url"); ?>/favicon.ico" type="image/x-icon" />
 
-    <!--[if lt IE 9]><script src="<?php bloginfo("template_url"); ?>/vendor/html5-3.6-respond-1.1.0.min.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="<?php bloginfo("template_url"); ?>/js/html5-3.6-respond-1.1.0.min.js"></script><![endif]-->
     
     <?php wp_head(); ?>
 
