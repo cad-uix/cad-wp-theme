@@ -17,7 +17,7 @@
         
         </div>
         
-        <?php get_template_part( 'inc', 'meta' ); ?>
+        <?php include (TEMPLATEPATH . '/inc/meta.php' ); ?>
         
         <?php if ( has_post_thumbnail() ) { ?>
         

@@ -39,35 +39,35 @@ if ( function_exists( 'add_theme_support' ) ) {
 /**
  * Create a function for calling post
  */
-require get_template_directory() . 'functions/post.php';
+require get_template_directory() . '/functions/post.php';
 
 /**
  * Adds Admin menu Page for custom post banner and function to display on template, bootstrap compatible
  */
-require get_template_directory() . 'functions/banner.php';
+require get_template_directory() . '/functions/banner.php';
 
 /**
  * Adds Admin menu Page for Client Contact Details and Social Network Links
  */
-require get_template_directory() . 'functions/client-data.php';
+require get_template_directory() . '/functions/client-data.php';
 
 /**
  * Bootstrap Extra Navigation Functions
  */
-require get_template_directory() . 'functions/breadcrumb.php';
-require get_template_directory() . 'functions/navigation.php';
-require get_template_directory() . 'functions/pagination.php';
+require get_template_directory() . '/functions/breadcrumb.php';
+require get_template_directory() . '/functions/navigation.php';
+require get_template_directory() . '/functions/pagination.php';
 
 /**
  * Bootstrap Nav Walker
  */
-require get_template_directory() . 'functions/wp_bootstrap_navwalker.php';
+require get_template_directory() . '/functions/wp_bootstrap_navwalker.php';
 
 /**
  *
  * Disable support for comments and trackbacks in post types
  */
-require get_template_directory() . 'functions/comments.php';
+require get_template_directory() . '/functions/comments.php';
 
 /**
  * disallow wordpress built-in editor

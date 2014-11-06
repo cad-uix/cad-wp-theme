@@ -6,6 +6,8 @@
  * @author marcelbadua
  */
 
+if ( ! function_exists( 'pagination' ) ) :
+
 function pagination($pages = '', $range = 2)
 {
      $showitems = ($range * 2)+1;
@@ -40,4 +42,4 @@ function pagination($pages = '', $range = 2)
      }
 }
 
-?>
+endif;

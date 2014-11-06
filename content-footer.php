@@ -16,15 +16,17 @@
             <div class="col-sm-4">
                
                 <h4>Contact Us</h4>
-                <?php get_template_part( 'inc', 'address' ); ?>
+               
+                <?php include (TEMPLATEPATH . '/inc/address.php' ); ?>
             
             </div>
             
             <div class="col-sm-4">
             
                 <h4>Connect with us</h4>
-                <?php get_template_part( 'inc', 'social' ); ?>
-            
+                
+                <?php include (TEMPLATEPATH . '/inc/social.php' ); ?>
+                
             </div>
             
             <div class="col-sm-4">

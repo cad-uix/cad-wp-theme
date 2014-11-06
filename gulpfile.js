@@ -11,7 +11,7 @@ var   gulp            = require('gulp'),
       browserSync     = require('browser-sync'),
       reload          = browserSync.reload;
 
-var   virtualHost     = '// PUT YOUR VIRTUAL HOST HERE //';
+var   virtualHost     = 'http://localhost/oracle';
 
 var handleErrors = function() {
   notify.onError({

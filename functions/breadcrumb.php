@@ -6,6 +6,8 @@
  * @author marcelbadua
  */
 
+if ( ! function_exists( 'breadcrumb' ) ) :
+
 function breadcrumb() {
     global $post;
     echo '<ul class="breadcrumb">';
@@ -47,4 +49,4 @@ function breadcrumb() {
     echo '</ul>';
 }
 
-?>
+endif;

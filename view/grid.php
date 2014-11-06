@@ -26,12 +26,6 @@
             + Read More
         </a></p>
         
-        <span>
-        
-        <?php get_template_part( 'inc/get', 'category' ); ?>
-        
-        <?php get_template_part( 'inc/get', 'tags' ); ?>
-        
-        </span>
+        <?php include (TEMPLATEPATH . '/inc/meta.php' ); ?>
         
     </div>

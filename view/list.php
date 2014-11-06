@@ -18,13 +18,7 @@
     
         
         
-        <span class="pull-right">
-        
-        <?php get_template_part( 'inc/get', 'category' ); ?>
-        
-        <?php get_template_part( 'inc/get', 'tags' ); ?>
-        
-        </span>
+        <?php include (TEMPLATEPATH . '/inc/meta.php' ); ?>
         
         <span>Posted by: <?php the_author(); ?></span> on <?php get_template_part( 'inc/get', 'meta' ); ?>
         
