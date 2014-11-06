@@ -25,7 +25,7 @@ var handleErrors = function() {
 };
 
 gulp.task('style', function () {
-  gulp.src(["./dev/less/theme.less", "./dev/less/bootstrap.less"])
+  gulp.src(["./dev/less/bootstrap.less"])
     .pipe(less())
     .on('error', handleErrors)
     .pipe(csscomb())
@@ -37,7 +37,7 @@ gulp.task('script', function () {
   gulp.src(['./dev/js/*.js'])
     .pipe(jshint())
     .pipe(jshint.reporter('default'))
-    .pipe(concat('cad-parent-script.js'))
+    .pipe(concat('main.js'))
     .pipe(gulp.dest('./js'));
 });
 
@@ -66,10 +66,10 @@ gulp.task('bower-copy', function(){
   .pipe(gulp.dest('./fonts'));
 });
 
-
 gulp.task('default', [
     'bower-copy', 
     'style', 
     'script', 
-    //'browser-sync', 
-    'watch']);
+    'browser-sync', 
+    'watch'
+]);

@@ -1,5 +1,14 @@
+/* 
+ *
+ * Script for Back To Top
+ *
+ * @package cad
+ * @author marcelbadua
+ */
+
 
 jQuery(function($){
+
     var offset = 500;
 
     $(document).scroll(function() {
@@ -15,14 +24,17 @@ jQuery(function($){
     });
 
     $('.back-to-top').click(function(event) {
+
         event.preventDefault();
+
         $('html, body').animate({
+
             scrollTop: 0
+
         }, 500);
+
         return false;
+
     });
+
   });
-
-
-
-    

@@ -86,7 +86,6 @@ function client_data_do_page() {
 					</td>
 				</tr>
 
-
 				<tr valign="top">
 					<th scope="row">
 						<?php _e( 'Email', 'clientdata' ); ?>

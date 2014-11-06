@@ -1,8 +1,13 @@
-jQuery(function($){
-      /* google maps */
+/* 
+ *
+ * ID Location Listener for Google Maps
+ *
+ */
+
+ jQuery(function($){
+  
   google.maps.visualRefresh = true;
   
-
   var map;
 
   function initialize() {
@@ -41,8 +46,7 @@ jQuery(function($){
         });
       }
   }
+
   google.maps.event.addDomListener(window, 'load', initialize);
 
-  /* end google maps */
-
-  });
+});

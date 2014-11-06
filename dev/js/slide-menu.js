@@ -1,7 +1,13 @@
+/* 
+ *
+ * Script for off canvas navigation for mobile
+ *
+ * @package cad
+ * @author marcelbadua
+ */
 
 jQuery(function($){
     
-
     $.fn.slideMenu = function() {
 
     var target = $(this).attr('data-target');
@@ -28,7 +34,7 @@ jQuery(function($){
   
   };
 
-$('.slide-menu-toggle').slideMenu();
+  $('.slide-menu-toggle').slideMenu();
 
 });
 
