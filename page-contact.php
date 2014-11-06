@@ -1,51 +1,66 @@
-<?php 
-/** 
-* Template Name: Contact
-**/ 
-?>
+<?php
+/**
+ * Template Name: Contact Form Page
+ *
+ * The template for displaying Contact Form includes Google Map.
+ *
+ * @package cad
+ */
 
-<?php get_header(); ?>
-	
-	<main class="container page-wrap">
-	
-	<?php cad_breadcrumb(); ?>
-	
-	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+get_header(); ?>
 
-		<article class="post" id="post-<?php the_ID(); ?>">
+    <div id="content-wrap">
 
-			<div class="page-header">
-  				<?php the_title( '<h1>', '</h1>' ); ?>
-			</div>
-			
-			<div class="row">
-			<div class="entry col-sm-6">
+        <main class="container">
 
-				<?php the_content(); ?>
+            <?php breadcrumb(); ?>
 
-			</div>
+            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-			<div class="entry col-sm-6">
+            <article class="post" id="post-<?php the_ID(); ?>">
 
-			<?php
-				$options = get_option('cad_theme_options');
-			?>
-			<?php 
-			if(!empty($options['address'])) { ?>
-			<span id="map-address"><?php echo $options['address']; ?></span>
-			<div id="google-map" style="width: 100%; height: 350px;"></div>
-			<?php } ?>
+                <div class="page-header">
 
-				
+                    <?php the_title( '<h1>', '</h1>' ); ?>
 
-			</div>
-			</div>
+                </div>
 
+                <div class="row">
 
-		</article>
+                    <div class="entry col-sm-6">
 
-		<?php endwhile; endif; ?>
-	
-	</main>
+                        <?php the_content(); ?>
+
+                    </div>
+
+                    <div class="entry col-sm-6">
+
+                        <?php $options = get_option('cad_theme_options'); ?>
+
+                        <?php if(!empty($options['address'])) { ?>
+
+                        <span id="map-address">
+                            <?php echo $options['address']; ?>
+                        </span>
+
+                        <div id="google-map" style="width: 100%; height: 350px;">
+
+                            <!-- CONTAINER FOR GOOGLE MAP -->
+
+                        </div>
+
+                    <?php } ?>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <?php endwhile; endif; ?>
+
+        </main>
+
+    </div>
 
 <?php get_footer(); ?>

@@ -1,3 +1,9 @@
+<span>
+    <?php the_time('F jS, Y') ?>
+</span>
+
+  <span><?php the_author(); ?></span>
+  
 <?php
 $categories = get_the_category();
 $separator = ' ';
@@ -9,3 +15,11 @@ if($categories){
 echo trim($output, $separator);
 }
 ?>
+
+<?php the_tags('<span class="label label-default">','</span> <span class="tag label label-default">', "</span>"); ?>
+
+
+<div class="meta">
+
+
+</div>

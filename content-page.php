@@ -1,24 +1,38 @@
+<?php
+ /**
+ *
+ * Content for displaying Page
+ *
+ * @package cad
+ */
+?>
+
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-		<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-			<div class="page-header">
-  				<?php the_title( '<h1>', '</h1>' ); ?>
-			</div>
-			
-			<?php if ( has_post_thumbnail() ) { ?>
-            <div class="featured-image">
-                <?php the_post_thumbnail('large', array('class' => 'img-responsive')); ?>
-                <hr>      
-            </div>
-            <?php } ?>
-			
-			<div class="entry">
+        <div class="page-header">
+            
+            <?php the_title( '<h1>', '</h1>' ); ?>
+        
+        </div>
 
-				<?php the_content(); ?>
+        <?php if ( has_post_thumbnail() ) { ?>
 
-			</div>
+        <div class="featured-image">
+            
+            <?php the_post_thumbnail('large', array('class' => 'img-responsive')); ?>
+        
+        </div>
+        
+        <?php } ?>
 
-		</article>
+        <div class="entry">
 
-		<?php endwhile; endif; ?>
+            <?php the_content(); ?>
+
+        </div>
+
+    </article>
+
+<?php endwhile; endif; ?>

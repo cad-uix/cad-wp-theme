@@ -1,19 +1,26 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The template for displaying all single posts.
+ *
+ * @package cad
+ */
 
-<div class="container">
+get_header(); ?>
 
-	<?php cad_breadcrumb(); ?>
+    <div id="content-wrap">
 
+            <div class="container">
 
-		
-		<main >
+            <?php breadcrumb(); ?>
 
-	     <?php get_template_part( 'content', 'single' ); ?>
+                <main>
 
-		</main>
-		
+                    <?php get_template_part( 'content', 'single' ); ?>
 
+                </main>
 
-</div>
+        </div>
+
+    </div>
 
 <?php get_footer(); ?>

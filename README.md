@@ -26,22 +26,23 @@ Run gulp
 
 includes an admin menu page for client data like email, phone, address and social links, can be called on template by using
 
-    <?php echo cad_option( //type//); ?>
-    <?php echo cad_option('address'); // to call for address ?> 
+    <?php echo call_data( $type ); ?>
 	
-## Parent Theme Functions
+$type: address, number, email, company, facebook, linkedin, twitter, google-plus
 
-### cad_slideshow();
+## Theme Functions
 
-Creates a Custom Post Type for slideshow, when called on theme - invokes the content-slideshow template
+### call_banner();
 
-    <?php cad_slideshow(); ?>
+Creates a Custom Post Type for banners, when called on theme - invokes the content-slideshow template
+
+    <?php call_banner(); ?>
     
-### cad_post();
+### call_post();
 
 Invokes a new WP_query for custom post types
 
-    <?php cad_post($post, $display , $category_name , $range); ?>
+    <?php call_post($post, $display , $category_name , $range); ?>
 
 $post: Post Slug. default: post
 

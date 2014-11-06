@@ -15,9 +15,7 @@
         <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
             <?php the_title("<h4>", "</h4>"); ?>
         </a>
-    
-        
-        
+       
         <small>
         <span>Posted by: <?php the_author(); ?></span> on <?php get_template_part( 'inc/get', 'meta' ); ?>
         </small>

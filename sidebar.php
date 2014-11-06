@@ -1,11 +1,8 @@
-<div id="sidebar">
+<?php
+/**
+ * The sidebar containing the main widget area.
+ *
+ * @package cad
+ */
 
-    <small>
-
-	    <h3>Latest Post</h3>
-
-	    <?php get_template_part( 'inc/content', 'latest' ); ?>
-
-    </small>
-
-</div>
+?>

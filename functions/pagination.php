@@ -1,7 +1,12 @@
 <?php
+/**
+ * Adds Pagination Bootstrap Ready
+ *
+ * @package cad
+ * @author marcelbadua
+ */
 
-// function for pagination bootstrap 3 ready
-function cad_pagination($pages = '', $range = 2)
+function pagination($pages = '', $range = 2)
 {
      $showitems = ($range * 2)+1;
      global $paged;

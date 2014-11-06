@@ -1,6 +1,12 @@
 <?php
+/**
+ * Adds Breadcrumb Navigation Bootstrap Ready
+ *
+ * @package cad
+ * @author marcelbadua
+ */
 
-function cad_breadcrumb() {
+function breadcrumb() {
     global $post;
     echo '<ul class="breadcrumb">';
     if (!is_home()) {
