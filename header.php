@@ -49,14 +49,21 @@
     <!--[if lt IE 9]><script src="<?php bloginfo("template_url"); ?>/js/html5-3.6-respond-1.1.0.min.js"></script><![endif]-->
     
     <?php wp_head(); ?>
+    
+    <script> 
+        var $buoop = {c:2}; 
+        function $buo_f(){ 
+         var e = document.createElement("script"); 
+         e.src = "//browser-update.org/update.js"; 
+         document.body.appendChild(e);
+        };
+        try {document.addEventListener("DOMContentLoaded", $buo_f,false)}
+        catch(e){window.attachEvent("onload", $buo_f)}
+    </script> 
 
 </head>
 
 <body <?php body_class(); ?>>
-
-    <!--[if lt IE 7]>
-        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
-
 
     <div id="slide-menu" class="load">
         <?php cad_get_menu( 'off-canvas-navigation', 'nav'); ?>
