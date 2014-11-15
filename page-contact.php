@@ -35,21 +35,27 @@ get_header(); ?>
 
                     <div class="entry col-sm-6">
 
-                        <?php $options = get_option('cad_theme_options'); ?>
-
-                        <?php if(!empty($options['address'])) { ?>
-
-                        <span id="map-address">
-                            <?php echo $options['address']; ?>
-                        </span>
-
-                        <div id="google-map" style="width: 100%; height: 350px;">
+                        
+                	<?php 
+                	
+                	$bool = call_data('address');
+                
+                	if(!empty($bool)) { ?>
+                	
+                	    <div id="google-map" style="width: 100%; height: 350px;">
 
                             <!-- CONTAINER FOR GOOGLE MAP -->
 
                         </div>
-
-                    <?php } ?>
+                        
+                        <span id="map-address">
+                        
+                            <?php echo call_data('address'); ?> 
+                        
+                        </span>
+                	
+                	
+                	<?php } ?>
 
                     </div>
 
@@ -62,5 +68,58 @@ get_header(); ?>
         </main>
 
     </div>
+    
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;extension=.js&amp;output=embed"></script>
 
+    <script>
+    /* google maps */
+
+    jQuery(function($){
+      
+    google.maps.visualRefresh = true;
+    
+    var map;
+    
+    function initialize() {
+      var geocoder = new google.maps.Geocoder();
+      var address = $('#map-address').text(); /* change the map-input to your address */
+      var mapOptions = {
+          zoom: 15,
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+          scrollwheel: false
+      };
+      map = new google.maps.Map(document.getElementById('google-map'),mapOptions);
+    
+      if (geocoder) {
+        geocoder.geocode( { 'address': address}, function(results, status) {
+          if (status == google.maps.GeocoderStatus.OK) {
+            if (status != google.maps.GeocoderStatus.ZERO_RESULTS) {
+            map.setCenter(results[0].geometry.location);
+    
+              var infowindow = new google.maps.InfoWindow(
+                  {
+                    content: address,
+                    map: map,
+                    position: results[0].geometry.location,
+                  });
+    
+              var marker = new google.maps.Marker({
+                  position: results[0].geometry.location,
+                  map: map, 
+                  title:address
+              }); 
+    
+            } else {
+              alert("No results found");
+            }
+          }
+        });
+      }
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+    
+    });
+    /* end google maps */
+    </script>
+    
 <?php get_footer(); ?>

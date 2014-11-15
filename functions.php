@@ -9,8 +9,12 @@
  * Enqueue Scripts and Styles
  */
 function enqueue_scripts_and_styles() {
+
+    wp_register_script( 'njprogress', get_template_directory_uri() . '/js/njprogress.js', array( 'jquery' ), 1.0, false );
+    wp_register_style( 'njprogress', get_template_directory_uri() . '/css/njprogress.css', null, 1.0, 'screen' );
+    wp_enqueue_script( 'njprogress' );
+    wp_enqueue_style( 'njprogress' );
     
-    wp_register_script( 'google-map', 'http://maps.googleapis.com/maps/api/js?sensor=false&amp;extension=.js&amp;output=embed', array( 'jquery' ), 1.0, true );
     wp_register_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), 1.0, true );
     wp_register_script( 'main', get_template_directory_uri() . '/js/main.js', array( 'jquery' ), 1.0, true );
 
@@ -25,6 +29,10 @@ function enqueue_scripts_and_styles() {
 
     wp_enqueue_style( 'bootstrap' );
     wp_enqueue_style( 'theme' );
+    
+
+    
+    
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_scripts_and_styles' );
 
@@ -72,4 +80,7 @@ require get_template_directory() . '/functions/comments.php';
 /**
  * disallow wordpress built-in editor
  */
-//define('DISALLOW_FILE_EDIT', TRUE);
+define('DISALLOW_FILE_EDIT', TRUE);
+
+
+add_filter('show_admin_bar', '__return_false');

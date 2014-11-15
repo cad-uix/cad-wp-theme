@@ -24,10 +24,6 @@ get_header(); ?>
 
         <div class="container">
             
-            <form action="">
-                <input type="text" class="form-control">
-            </form>
-
             <?php call_post('post', 'list'); ?>
 
         </div>
