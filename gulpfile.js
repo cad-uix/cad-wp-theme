@@ -41,8 +41,8 @@ gulp.task('scripts', function () {
 });
 
 gulp.task('watch', function () {
-  gulp.watch(['./dev/less/**/*.less'], ['style']);
-  gulp.watch(['./dev/js/**/*.js'], ['script']);
+  gulp.watch(['./dev/less/**/*.less'], ['styles']);
+  gulp.watch(['./dev/js/**/*.js'], ['scripts']);
 });
 
 gulp.task('browser-sync', function () {
