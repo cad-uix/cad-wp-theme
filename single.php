@@ -2,7 +2,8 @@
 /**
  * The template for displaying all single posts.
  *
- * @package cad
+ * @package oracle
+ * @author marcelbadua
  */
 
 get_header(); ?>

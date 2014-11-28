@@ -2,7 +2,8 @@
 /**
  * Functions
  *
- * @package cad
+ * @package oracle
+ * @author marcelbadua
  */
 
 /** 
@@ -10,29 +11,20 @@
  */
 function enqueue_scripts_and_styles() {
 
+    wp_enqueue_style( 'wordpress-default', get_stylesheet_uri() );
+
     wp_register_script( 'njprogress', get_template_directory_uri() . '/js/njprogress.js', array( 'jquery' ), 1.0, false );
-    wp_register_style( 'njprogress', get_template_directory_uri() . '/css/njprogress.css', null, 1.0, 'screen' );
     wp_enqueue_script( 'njprogress' );
-    wp_enqueue_style( 'njprogress' );
+    
+    wp_register_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css', null, 1.0, 'screen' );
+    wp_enqueue_style( 'bootstrap' );
     
     wp_register_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), 1.0, true );
-    wp_register_script( 'main', get_template_directory_uri() . '/js/main.js', array( 'jquery' ), 1.0, true );
-
-    wp_register_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css', null, 1.0, 'screen' );
-    wp_register_style( 'theme', get_template_directory_uri() . '/css/theme.css', null, 1.0, 'screen' );
-
-    wp_enqueue_style( 'cad-style', get_stylesheet_uri() );
-    
-    wp_enqueue_script( 'google-map' );
     wp_enqueue_script( 'bootstrap' );
-    wp_enqueue_script( 'main' );
 
-    wp_enqueue_style( 'bootstrap' );
-    wp_enqueue_style( 'theme' );
-    
+    wp_register_script( 'scripts', get_template_directory_uri() . '/js/scripts.js', array( 'jquery' ), 1.0, true );
+    wp_enqueue_script( 'scripts' );
 
-    
-    
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_scripts_and_styles' );
 
@@ -80,7 +72,7 @@ require get_template_directory() . '/functions/comments.php';
 /**
  * disallow wordpress built-in editor
  */
-define('DISALLOW_FILE_EDIT', TRUE);
+//define('DISALLOW_FILE_EDIT', TRUE);
 
 
-add_filter('show_admin_bar', '__return_false');
+//add_filter('show_admin_bar', '__return_false');

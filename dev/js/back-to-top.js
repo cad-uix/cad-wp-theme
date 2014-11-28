@@ -2,7 +2,7 @@
  *
  * Script for Back To Top
  *
- * @package cad
+ * @package oracle
  * @author marcelbadua
  */
 

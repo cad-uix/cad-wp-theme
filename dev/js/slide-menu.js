@@ -2,7 +2,7 @@
  *
  * Script for off canvas navigation for mobile
  *
- * @package cad
+ * @package oracle
  * @author marcelbadua
  */
 

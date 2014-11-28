@@ -21,7 +21,7 @@ var handleErrors = function() {
   this.emit('end');
 };
 
-gulp.task('style', function () {
+gulp.task('styles', function () {
   gulp.src([
     "./dev/less/bootstrap.less"
     ])
@@ -32,11 +32,11 @@ gulp.task('style', function () {
     .pipe(gulp.dest('./css'));
 });
 
-gulp.task('script', function () {
+gulp.task('scripts', function () {
   gulp.src(['./dev/js/*.js'])
     .pipe(jshint())
     .pipe(jshint.reporter('default'))
-    .pipe(concat('theme.js'))
+    .pipe(concat('scripts.js'))
     .pipe(gulp.dest('./js'));
 });
 
@@ -68,8 +68,8 @@ gulp.task('bower-copy', function(){
 
 gulp.task('default', [
     'bower-copy', 
-    'style', 
-    'script', 
+    'styles', 
+    'scripts', 
     'browser-sync', 
     'watch'
 ]);

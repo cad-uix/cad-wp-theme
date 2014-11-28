@@ -1,21 +1,21 @@
 {
-  "name": "kickstarter-theme",
+  "name": "oracle-wordpress-theme-framework",
   "version": "1.0.0",
-  "description": "kickstarter theme for wordpress",
+  "description": "Oracle Wordpress Theme Framework utilizes the use of bower and gulp. to be used for bootstrap and it's powerful LESS files",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/cad-uix/wp-bs-less-gulp.git"
+    "url": "http://github.com/cad-uix/cad-wp-theme.git"
   },
   "author": "marcel badua",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/cad-uix/wp-bs-less-gulp/issues"
+    "url": "https://github.com/cad-uix/cad-wp-theme/issues"
   },
-  "homepage": "https://github.com/cad-uix/wp-bs-less-gulp",
+  "homepage": "https://github.com/cad-uix/cad-wp-theme",
   "devDependencies": {
     "browser-sync": "^1.5.2",
     "gulp": "^3.8.8",

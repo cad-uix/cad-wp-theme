@@ -4,7 +4,8 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package cad
+ * @package oracle
+ * @author marcelbadua
  */
 
 get_header(); ?>

@@ -2,7 +2,7 @@
 /**
  * Function for Client Data and Social Network Link
  *
- * @package cad
+ * @package oracle
  * @author marcelbadua
  */
 

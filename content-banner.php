@@ -2,7 +2,8 @@
 /**
  * Content for Banner (bootstrap)
  *
- * @package cad
+ * @package oracle
+ * @author marcelbadua
  */
 ?>
    

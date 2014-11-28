@@ -2,7 +2,8 @@
 /**
  * Template for displaying search results.
  *
- * @package cad
+ * @package oracle
+ * @author marcelbadua
  */
 
 get_header(); ?>

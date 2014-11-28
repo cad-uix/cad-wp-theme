@@ -4,7 +4,8 @@
  *
  * The template for displaying Blog list.
  *
- * @package cad
+ * @package oracle
+ * @author marcelbadua
  */
 
 get_header();  the_post(); ?>
@@ -21,7 +22,7 @@ get_header();  the_post(); ?>
 
             </div>
 
-            <?php cad_post('post', 'list'); ?>
+            <?php call_post('post', 'list'); ?>
 
         </div>
 

@@ -1,10 +1,11 @@
 <?php
 /**
- * The header for our theme.
+ * The header for theme.
  *
  * Displays all of the <head> section and everything up till <div id="content-wrap">
  *
- * @package cad
+ * @package oracle
+ * @author marcelbadua
  */
 ?>
 

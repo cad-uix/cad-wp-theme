@@ -2,7 +2,7 @@
 /**
  * Adds Pagination Bootstrap Ready
  *
- * @package cad
+ * @package oracle
  * @author marcelbadua
  */
 

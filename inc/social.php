@@ -2,7 +2,7 @@
 /**
  * Display Social Link with Font Awesome Icons
  *
- * @package cad
+ * @package oracle
  * @author marcelbadua
  */
 ?>

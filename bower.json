@@ -1,10 +1,10 @@
 {
-  "name": "cad-bootstrap-kickstarter",
-  "version": "0.1.0",
+  "name": "oracle-wordpress-theme-framework",
+  "version": "1.0.0",
   "authors": [
     "marcelbadua <marcel@customadesign.com>"
   ],
-  "description": "kickstarting a new front-end wordpress theme project based on the custom Bootstrap build",
+  "description": "Oracle Wordpress Theme Framework utilizes the use of bower and gulp. to be used for bootstrap and it's powerful LESS files",
   "keywords": [
     "bootstrap",
     "less",

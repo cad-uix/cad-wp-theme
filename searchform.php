@@ -2,7 +2,8 @@
 /**
  * The searchform containing search form for blog search.
  *
- * @package cad
+ * @package oracle
+ * @author marcelbadua
  */
 
 ?>

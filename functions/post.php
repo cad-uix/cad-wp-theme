@@ -2,7 +2,7 @@
 /**
  * Function for displaying post
  *
- * @package cad
+ * @package oracle
  * @author marcelbadua
  */
 
@@ -26,9 +26,7 @@ if ( ! function_exists( 'call_post' ) ) :
           <div class="post-list row">
 
           <?php while ( $post_query->have_posts() ) : $post_query->the_post(); ?>
-          
-              <?php // get_template_part( 'view', $display ); ?>
-              
+             
               <?php include (TEMPLATEPATH . '/view/' . $display . '.php' ); ?>
 
           <?php endwhile; ?>

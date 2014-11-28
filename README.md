@@ -1,4 +1,4 @@
-# CAD Kickstarter Theme for Wordpress
+# Oracle Wordpress Theme Framework
 
 Exclusively used by Custom A Design and Linkage UIX Design Team
 
@@ -6,7 +6,7 @@ Exclusively used by Custom A Design and Linkage UIX Design Team
 
 Clone theme repository in wordpress theme folder
 
-    git clone git@github.com:cad-uix/cad-parent.git
+    git clone git@github.com:cad-uix/cad-wp-theme.git
 
 Download Bootstrap Files via Bower
 

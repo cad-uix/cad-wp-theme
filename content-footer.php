@@ -3,7 +3,8 @@
 *
  * Content for displaying Footer
  *
- * @package cad
+ * @package oracle
+ * @author marcelbadua
  */
 ?>
  

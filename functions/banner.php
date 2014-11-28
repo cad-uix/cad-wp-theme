@@ -2,7 +2,7 @@
 /**
  * Creates a custom Post Type Banner and function for displaying Banner on template.
  *
- * @package cad
+ * @package oracle
  * @author marcelbadua
  */
 
@@ -58,6 +58,7 @@ if( !function_exists('register_banner') ):
      */
     add_action( 'save_post', 'your_meta_box_save' );
     add_action( 'add_meta_boxes', 'your_meta_box_add' );
+
     function your_meta_box_add(){
         add_meta_box( 'predefined_field', 'Banner Text', 'your_meta_box_html', 'banner', 'normal', 'high' );
     }

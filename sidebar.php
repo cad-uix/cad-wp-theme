@@ -2,7 +2,8 @@
 /**
  * The sidebar containing the main widget area.
  *
- * @package cad
+ * @package oracle
+ * @author marcelbadua
  */
 
 ?>
