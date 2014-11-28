@@ -11,10 +11,10 @@
  */
 function enqueue_scripts_and_styles() {
 
-    wp_enqueue_style( 'wordpress-default', get_stylesheet_uri() );
+    wp_enqueue_style( 'wordpress_default', get_stylesheet_uri() );
 
-    wp_register_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css', null, 1.0, 'screen' );
-    wp_enqueue_style( 'bootstrap' );
+    wp_register_style( 'oracle_bootstrap', get_template_directory_uri() . '/css/bootstrap.css', null, 1.0, 'screen' );
+    wp_enqueue_style( 'oracle_bootstrap' );
 
     wp_register_script( 'njprogress', get_template_directory_uri() . '/vendor/njprogress.js', array( 'jquery' ), 1.0, false );
     wp_enqueue_script( 'njprogress' );
