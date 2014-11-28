@@ -13,7 +13,7 @@
 
 get_header(); ?>
 
-    <div id="page-wrap">
+    <div id="content-wrap">
 
             <div class="container">
 
