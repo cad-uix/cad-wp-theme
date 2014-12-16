@@ -8,10 +8,9 @@ var   gulp            = require('gulp'),
       csscomb         = require('gulp-csscomb'),
       minify          = require('gulp-minify-css'),
       notify          = require('gulp-notify'),
-      browserSync     = require('browser-sync'),
-      reload          = browserSync.reload;
+      browserSync     = require('browser-sync');
 
-var   virtualHost     = 'http://localhost/oracle';
+var   virtualHost     = 'localhost';
 
 var handleErrors = function() {
   notify.onError({
@@ -29,7 +28,8 @@ gulp.task('styles', function () {
     .on('error', handleErrors)
     .pipe(csscomb())
     .pipe(minify())
-    .pipe(gulp.dest('./css'));
+    .pipe(gulp.dest('./css'))
+    .pipe(browserSync.reload({stream:true}));
 });
 
 gulp.task('scripts', function () {
@@ -37,7 +37,8 @@ gulp.task('scripts', function () {
     .pipe(jshint())
     .pipe(jshint.reporter('default'))
     .pipe(concat('scripts.js'))
-    .pipe(gulp.dest('./js'));
+    .pipe(gulp.dest('./js'))
+    .pipe(browserSync.reload({stream:true}));
 });
 
 gulp.task('watch', function () {
@@ -46,17 +47,9 @@ gulp.task('watch', function () {
 });
 
 gulp.task('browser-sync', function () {
-  var files = [
-  './js/**/*.js', 
-  './css/**/*.css', 
-  './img/**/*.{png,jpg,jpeg,gif}', 
-  './**/*.php'];
-
-  browserSync.init(
-    files, {
-      proxy: virtualHost
-    }
-  );
+  browserSync({
+        proxy: virtualHost;
+    });
 });
 
 gulp.task('bower-copy', function(){
