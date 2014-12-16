@@ -10,7 +10,7 @@ var   gulp            = require('gulp'),
       notify          = require('gulp-notify'),
       browserSync     = require('browser-sync');
 
-var   virtualHost     = 'localhost';
+var   virtualHost     = 'http://localhost';
 
 var handleErrors = function() {
   notify.onError({
@@ -48,7 +48,7 @@ gulp.task('watch', function () {
 
 gulp.task('browser-sync', function () {
   browserSync({
-        proxy: virtualHost;
+        proxy: virtualHost
     });
 });
 
