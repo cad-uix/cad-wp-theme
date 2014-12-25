@@ -10,26 +10,30 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-    <div class="page-header">
+    <div class="container">
+        
+        <div class="page-header">
         
         <?php the_title( '<h1>', '</h1>' ); ?>
     
-    </div>
+        </div>
 
-    <?php if ( has_post_thumbnail() ) { ?>
+        <?php if ( has_post_thumbnail() ) { ?>
 
-    <div class="featured-image">
+        <div class="featured-image">
+            
+            <?php the_post_thumbnail('large', array('class' => 'img-responsive')); ?>
         
-        <?php the_post_thumbnail('large', array('class' => 'img-responsive')); ?>
-    
-    </div>
-    
-    <?php } ?>
+        </div>
+        
+        <?php } ?>
 
-    <div class="entry">
+        <div class="entry">
 
-        <?php the_content(); ?>
+            <?php the_content(); ?>
 
+        </div>
+        
     </div>
 
 </article>
