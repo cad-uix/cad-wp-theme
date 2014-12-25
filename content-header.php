@@ -24,7 +24,7 @@
 
 			<div class="col-sm-8">
 				
-				<?php cad_get_menu( 'header-navigation', 'nav nav-pills hidden-xs', 'header-navigation', 2); ?>
+				<?php menu( 'header-navigation', 'nav nav-pills hidden-xs', 'header-navigation', 2); ?>
 
 			</div>
 			

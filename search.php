@@ -10,7 +10,6 @@ get_header(); ?>
 
 	<div id="content-wrap">
 		
-
 	    <?php breadcrumb(); ?>
 
 	    <?php if (have_posts()) : ?>
@@ -42,7 +41,6 @@ get_header(); ?>
 		<h2>No posts found.</h2>
 
 	    <?php endif; ?>
-
 	   
 	</div>
 

@@ -19,7 +19,7 @@ register_nav_menus( array(
 /*
  * Custom wp_nav_menu Function for CAD
  */
-function cad_get_menu($menu = '', $menuClass = '', $containerClass = '', $depth = '2'){
+function menu($menu = '', $menuClass = '', $containerClass = '', $depth = '2'){
 
     $menuArgument = array(
 	    'theme_location'  => $menu,

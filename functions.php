@@ -76,13 +76,16 @@ require get_template_directory() . '/functions/client-data.php';
  * Bootstrap Extra Navigation Functions
  */
 require get_template_directory() . '/functions/breadcrumb.php';
-require get_template_directory() . '/functions/navigation.php';
+
 require get_template_directory() . '/functions/pagination.php';
 
 /**
  * Bootstrap Nav Walker
  */
 require get_template_directory() . '/functions/wp_bootstrap_navwalker.php';
+
+
+require get_template_directory() . '/functions/navigation.php';
 
 /**
  *

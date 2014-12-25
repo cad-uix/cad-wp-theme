@@ -46,7 +46,7 @@
 
                 <h4>Quick Links</h4>
 
-                <?php cad_get_menu( 'footer-navigation', 'list-unstyled', 'footer-navigation', '1'); ?>
+                <?php menu( 'footer-navigation', 'list-unstyled', 'footer-navigation', '1'); ?>
 
             </aside>
 
