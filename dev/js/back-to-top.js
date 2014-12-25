@@ -6,7 +6,6 @@
  * @author marcelbadua
  */
 
-
 jQuery(function($){
 
     var offset = 500;
@@ -37,4 +36,4 @@ jQuery(function($){
 
     });
 
-  });
+});

@@ -20,7 +20,7 @@ jQuery(function($){
 
     $(target).removeClass('load');
 
-    $(this).click( function() {
+    $(this).click( function(event) {
       
       event.preventDefault();
 

@@ -13,20 +13,20 @@
 
 get_header(); ?>
 
-    <div id="content-wrap">
+<div id="content-wrap">
 
-            <div class="container">
+    <?php breadcrumb(); ?>
 
-            <?php breadcrumb(); ?>
+    <main id="main" class="site-main" role="main">
 
-                <main>
+    	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-                    <?php get_template_part( 'content', 'page' ); ?>
+        <?php get_template_part( 'content', 'page' ); ?>
 
-                </main>
+        <?php endwhile; endif; ?>
 
-        </div>
+    </main> <!-- #main -->
 
-    </div>
+</div> <!-- #content-wrap -->
 
 <?php get_footer(); ?>

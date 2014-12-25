@@ -15,20 +15,18 @@
 
 get_header(); ?>
 
-    <div id="content-wrap">
+<div id="content-wrap">
 
-        <div class="container">
+	<main id="main" class="site-main" role="main">
 
-            <?php call_banner(); ?>
+    	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-        </div>
+        <?php get_template_part( 'content', 'page' ); ?>
 
-        <div class="container">
-            
-            <?php call_post('post', 'list'); ?>
+        <?php endwhile; endif; ?>
 
-        </div>
+    </main> <!-- #main -->
 
-    </div>
+</div> <!-- #content-wrap -->
 
 <?php get_footer(); ?>

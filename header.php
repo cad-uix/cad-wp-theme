@@ -19,7 +19,6 @@
 
     <meta charset="<?php bloginfo( 'charset' ); ?>" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>
@@ -45,9 +44,9 @@
 
     <link rel="profile" href="http://gmpg.org/xfn/11" />
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-    <link rel="shortcut icon" href="<?php bloginfo("template_url"); ?>/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico" type="image/x-icon" />
 
-    <!--[if lt IE 9]><script src="<?php bloginfo("template_url"); ?>/js/html5-3.6-respond-1.1.0.min.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="<?php echo get_template_directory_uri(); ?>/js/html5-3.6-respond-1.1.0.min.js"></script><![endif]-->
     
     <?php wp_head(); ?>
     
@@ -67,7 +66,9 @@
 <body <?php body_class(); ?>>
 
     <div id="slide-menu" class="load">
+
         <?php cad_get_menu( 'off-canvas-navigation', 'nav'); ?>
+        
     </div>
 
     <div id="page-wrap"> <!-- PAGE-WRAP CLOSES AT THE END OF FOOTER.PHP-->

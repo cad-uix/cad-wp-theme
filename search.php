@@ -10,42 +10,40 @@ get_header(); ?>
 
 	<div id="content-wrap">
 		
-		<div class="container">
 
-		    <?php breadcrumb(); ?>
+	    <?php breadcrumb(); ?>
 
-		    <?php if (have_posts()) : ?>
+	    <?php if (have_posts()) : ?>
 
-			<div class="page-header">
+		<div class="page-header">
 
-				<h1>Search Results</h1>
+			<h1>Search Results</h1>
 
-			</div>
+		</div>
 
-			<?php while (have_posts()) : the_post(); ?>
+		<?php while (have_posts()) : the_post(); ?>
 
-            <div <?php post_class() ?> id="post-<?php the_ID(); ?>">
+        <div <?php post_class() ?> id="post-<?php the_ID(); ?>">
 
-                <h2><?php the_title(); ?></h2>
+            <h2><?php the_title(); ?></h2>
 
-                <div class="entry">
+            <div class="entry">
 
-                    <?php the_excerpt(); ?>
-
-                </div>
+                <?php the_excerpt(); ?>
 
             </div>
 
-            <?php endwhile; ?>
-			
-		    <?php else : ?>
+        </div>
 
-			<h2>No posts found.</h2>
+        <?php endwhile; ?>
+		
+	    <?php else : ?>
 
-		    <?php endif; ?>
+		<h2>No posts found.</h2>
 
-	    </div>
-	
+	    <?php endif; ?>
+
+	   
 	</div>
 
 <?php get_footer(); ?>

@@ -15,8 +15,6 @@
         <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
             <?php the_title("<h4>", "</h4>"); ?>
         </a>
-    
-        
         
         <?php include (TEMPLATEPATH . '/inc/meta.php' ); ?>
         
