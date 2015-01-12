@@ -29,3 +29,5 @@
 			
 	</span>
 </div>
+
+<div class="clearfix">&nbsp;</div>
