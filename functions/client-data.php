@@ -106,11 +106,11 @@ function client_data_do_page() {
 
 				<tr valign="top">
 					<th scope="row">
-						<?php _e( 'Company ', 'clientdata' ); ?>
+						<?php _e( 'About ', 'clientdata' ); ?>
 					</th>
 					<td>
 						<textarea id="client_data_options[about]" class="large-text" cols="50" rows="10" name="client_data_options[about]"><?php echo esc_textarea( $options['about'] ); ?></textarea>
-						<label class="description" for="client_data_options[company]"><?php _e( 'Short details about the company', 'clientdata' ); ?></label>
+						<label class="description" for="client_data_options[about]"><?php _e( 'Short details about the company', 'clientdata' ); ?></label>
 					</td>
 				</tr>
 
@@ -188,7 +188,7 @@ function client_data_validate( $input ) {
 	$input['linkedin'] = wp_filter_nohtml_kses( $input['linkedin'] );
 
 	// Say our textarea option must be safe text with the allowed tags for posts
-	$input['company'] = wp_filter_post_kses( $input['company'] );
+	$input['about'] = wp_filter_post_kses( $input['about'] );
 
 	return $input;
 }
