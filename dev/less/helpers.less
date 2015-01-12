@@ -38,8 +38,12 @@
 }
             
 #colophon {
-	padding-top: 0.5rem;
-	padding-bottom: 0.5rem;
+	text-align: center;
+	@media (min-width: @screen-xs) {
+		text-align: left;
+		padding-top: 4rem;
+		padding-bottom: 4rem;
+	}
 	background-color: @gray-darker;
 	color: @gray-lighter; 
 	a {
@@ -48,10 +52,10 @@
 			color: @gray-lighter;
 		}
 	}
-	p {
-		padding-top: 1rem;
-	}
+	
 	#customadesign {
-		text-align: right;
+		@media (min-width: @screen-xs) {
+			text-align: right;
+		}
 	}
 }
