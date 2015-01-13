@@ -8,7 +8,7 @@
 
 ?>
 
-<form action="<?php bloginfo('siteurl'); ?>" id="searchform" method="get" role="search">
+<form action="<?php echo home_url( '/' ); ?>" id="searchform" method="get" role="search">
  
     <div>
  
