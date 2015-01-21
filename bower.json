@@ -13,9 +13,9 @@
     "bower"
   ],
   "dependencies": {
-    "bootstrap": "~3.2.0"
+    "bootstrap": "~3.2.0",
+    "jquery-prettyPhoto": "*"
   },
-
   "license": "MIT",
   "private": true
 }

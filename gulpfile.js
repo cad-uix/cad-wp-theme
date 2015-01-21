@@ -57,6 +57,8 @@ gulp.task('bower-copy', function(){
   .pipe(gulp.dest('./fonts'));
   gulp.src('./bower_components/bootstrap/dist/js/**/*.*')
   .pipe(gulp.dest('./js'));
+  gulp.src('./bower_components/jquery-prettyPhoto/**/*.*')
+  .pipe(gulp.dest('./vendor/jquery-prettyPhoto'));
 });
 
 gulp.task('default', [
