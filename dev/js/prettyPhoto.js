@@ -1,4 +1,4 @@
-
+/* 
  *
  * Script for adding pretty photo rel to wp-image
  *
@@ -10,6 +10,6 @@ jQuery(function($){
   
    $( "a" ).find( "img" ).parent().attr('rel', 'prettyPhoto');
 
-  $("[rel^='prettyPhoto']").prettyPhoto();/* 
+  $("[rel^='prettyPhoto']").prettyPhoto();
 
 });
