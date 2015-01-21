@@ -1,4 +1,4 @@
-/* 
+
  *
  * Script for adding pretty photo rel to wp-image
  *
@@ -8,6 +8,8 @@
 
 jQuery(function($){
   
-  $("img[class^='wp-image-']").parent().attr('rel', 'prettyPhoto[post-images]');
+   $( "a" ).find( "img" ).parent().attr('rel', 'prettyPhoto');
+
+  $("[rel^='prettyPhoto']").prettyPhoto();/* 
 
 });
