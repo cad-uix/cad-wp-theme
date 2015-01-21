@@ -30,7 +30,7 @@
         
         <?php } ?>
         
-        <div class="entry">
+        <div id="wp-entry" class="entry">
             
             <?php the_content(); ?>
         
