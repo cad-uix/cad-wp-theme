@@ -41,12 +41,30 @@ img.pull-right, img.alignright, a.pull-right, a.alignright {
     margin-bottom: @padding-base-vertical*2;
 }
 
-.error-template {
-    padding: 40px 15px;
-    text-align: center;}
-.error-actions {
-    margin-top:15px;
-    margin-bottom:15px;}
-.error-actions .btn { 
-    margin-right:10px; 
+.commentlist {
+    margin: 0;
+    padding: 0;
+    >.comment {
+        .well();
+        list-style: none;
+    }
+    .comment-edit-link {
+        .btn();
+        .btn-default();
+        .btn-xs();
+    }
+    .comment-reply-link {
+        .btn();
+        .btn-primary();
+        .btn-xs();   
+    }
+}
+#commentform {
+    textarea {
+        .form-control();
+    }
+    #submit {
+        .btn();
+        .btn-primary();
+    }
 }

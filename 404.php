@@ -10,32 +10,34 @@ get_header(); ?>
 
 <div id="content-wrap">
 
-<div class="error-template">
+	<div class="container">
+		
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="alert alert-info">
+			
+			<h1>Opps! <small>We are really sorry but the page you requested cannot be found.</small></h1>
 
-<h1>Oops!</h1>
+			<p>It seems that the page you were trying to reach doesn't exist, or maybe it has just moved. We think that the best thing to do is to start again from the home page. Feel free to contact us if the problem persist or if you definitely can't find what you are looking for. Thank you very much.</p>
+			
+			<div class="clearfix">&nbsp;</div>
+			<p>
+				<a href="<?php bloginfo("url"); ?>" class="btn btn-info">
+			<i class="fa fa-home"></i>
+			Return to home page
+			</a>
+			</p>
 
-<h2>404 Not Found</h2>
+			<div class="clearfix">&nbsp;</div>
 
-<div class="error-details">
 
-Sorry, an error has occured, Requested page not found!
+		</div>
+		
+			</div>
 
-</div>
-
-<div class="error-actions">
-
-<a href="<?php bloginfo("url"); ?>" class="btn btn-primary btn-lg">
-<span class="fa fa-home"></span>
-Take Me Home
-</a>
-<a href="<?php bloginfo("url"); ?>" class="btn btn-default btn-lg">
-<span class="fa fa-envelope"></span> 
-Contact Support 
-</a>
-
-</div>
-
-</div>
+		</div>
+		
+	</div>
 
 </div>
 

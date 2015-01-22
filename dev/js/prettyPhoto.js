@@ -8,8 +8,6 @@
 
 jQuery(function($){
   
-
-
   $("#wp-entry").find("img").parent().attr("rel", "prettyPhoto");
 
   $("[rel^='prettyPhoto']").prettyPhoto();

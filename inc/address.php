@@ -8,6 +8,8 @@
 ?>
 
 <address>
+	<ul>
+		
 	
 	<?php 
 	
@@ -15,7 +17,9 @@
 
 	if(!empty($bool)) { ?>
 	
-	<i class="fa fa-map-marker"></i> <?php echo call_data('address'); ?> <br>
+	<li>
+		<i class="fa fa-map-marker"></i> <?php echo call_data('address'); ?>
+	</li>
 	<?php } ?>
     
 	<?php 
@@ -23,8 +27,11 @@
 
 	if(!empty($bool)) { ?>
 
-	<i class="fa fa-phone"></i> <a href="call:<?php echo call_data('number'); ?>"> 
-	<?php echo call_data('number'); ?> </a><br>
+	<li>
+		<i class="fa fa-phone"></i> 
+			<a href="call:<?php echo call_data('number'); ?>"> 
+
+	<?php echo call_data('number'); ?> </a></li>
 	<?php } ?>
 
 	<?php 
@@ -33,8 +40,11 @@
 
 	if(!empty($bool)) { ?>
 
-	<i class="fa fa-envelope"></i> <a href="mailto:<?php echo call_data('email'); ?>"> 
-	<?php echo call_data('email'); ?> </a><br>
+	<li><i class="fa fa-envelope"></i> <a href="mailto:<?php echo call_data('email'); ?>"> 
+
+	<?php echo call_data('email'); ?> </a></li>
 	<?php } ?>
+
+	</ul>
 	
 </address>

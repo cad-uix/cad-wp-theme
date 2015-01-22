@@ -16,10 +16,21 @@
         
             <aside class="col-sm-5">
 
-                <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo( 'name'); ?>">
 
         
-                    <img class="img-responsive" src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
+                    <?php if (get_header_image() != '')
+                    { ?>
+                        <img class="img-responsive" src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="<?php bloginfo( 'name'); ?>" />  
+                    <?php
+                    }
+                    else
+                    {
+                        ?>
+                        <h4> <?php bloginfo( 'name'); ?></h4>
+                    <?php
+                    }
+                    ?>
         
                 </a>
                 
@@ -65,7 +76,7 @@
                             'theme_location'  => 'footer-navigation',
                             'menu'            => 'footer-navigation',
                             'container'       => false,
-                            'container_class' => '',
+                            'container_class' => 'footer-navigation',
                             'container_id'    => '',
                             'menu_class'      => 'list-unstyled footer-navigation',
                             'menu_id'         => '',
@@ -102,14 +113,14 @@
 
                             <hr>
 
-                            <ul class="list-unstyled">
+                            <ul class="footer-navigation">
 
                               <?php while ( $post_query->have_posts() ) : $post_query->the_post(); ?>
-                                 
+                                 <li>
                                   <a href="<?php the_permalink(); ?>">
-                                        <?php the_title( '<li>', '</li>' ); ?>
+                                        <?php the_title(); ?>
                                     </a>
-
+                                </li>
                               <?php endwhile; ?>
                               
                             </ul>

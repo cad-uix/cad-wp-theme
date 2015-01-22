@@ -67,13 +67,37 @@
 
     <div id="slide-menu" class="load">
 
-        <?php menu( 'off-canvas-navigation', 'nav'); ?>
+
+            <?php
+
+                $defaults = array(
+                    'theme_location'  => 'off-canvas-navigation',
+                    'menu'            => 'off-canvas-navigation',
+                    'container'       => false,
+                    'container_class' => '',
+                    'container_id'    => '',
+                    'menu_class'      => 'list-unstyled off-canvas-navigation',
+                    'menu_id'         => '',
+                    'echo'            => true,
+                    'fallback_cb'     => 'wp_page_menu',
+                    'before'          => '',
+                    'after'           => '',
+                    'link_before'     => '',
+                    'link_after'      => '',
+                    'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                    'depth'           => 0,
+                    'walker'          => ''
+                );
+
+                wp_nav_menu( $defaults );
+
+                ?>
         
     </div>
 
     <div id="page-wrap"> <!-- PAGE-WRAP CLOSES AT THE END OF FOOTER.PHP-->
     
-        <a href="#" class="back-to-top">
+        <a href="javascript:void(0);" class="back-to-top" data-toggle="tooltip" data-placement="left"  title="Back to Top">
             <i class="fa fa-angle-up fa-2x"></i>
         </a>
         

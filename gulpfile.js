@@ -36,6 +36,7 @@ gulp.task('scripts', function () {
   gulp.src(['./dev/js/*.js'])
     .pipe(jshint())
     .pipe(jshint.reporter('default'))
+    .pipe(uglify())
     .pipe(concat('scripts.js'))
     .pipe(gulp.dest('./js'))
     .pipe(browserSync.reload({stream:true}));

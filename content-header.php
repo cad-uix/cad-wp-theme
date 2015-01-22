@@ -8,7 +8,7 @@
  */
 ?>
 
-<div id="user-bar">
+<div id="user-bar" class="hidden-xs">
 	<div class="container">
 
 	<?php call_social_links('nav nav-pills pull-right', ''); ?>
@@ -62,11 +62,20 @@
 			
 			<div class="col-sm-4">
 				
-				<a class="brand" <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-       				<?php //bloginfo( 'name'); ?>
-
-       				<img class="img-responsive" src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
-
+				<a class="brand" <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="<?php bloginfo( 'name'); ?>">
+       				
+       				<?php if (get_header_image() != '')
+       				{ ?>
+       					<img class="img-responsive" src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="<?php bloginfo( 'name'); ?>" />	
+       				<?php
+       				}
+       				else
+       				{
+       					?>
+       					<h1> <?php bloginfo( 'name'); ?></h1>
+					<?php
+       				}
+       				?>
     			</a>
 
 			</div>
@@ -81,7 +90,7 @@
                     'container'       => false,
                     'container_class' => '',
                     'container_id'    => '',
-                    'menu_class'      => 'list-unstyled header-navigation',
+                    'menu_class'      => 'list-unstyled header-navigation hidden-xs',
                     'menu_id'         => '',
                     'echo'            => true,
                     'fallback_cb'     => 'wp_page_menu',

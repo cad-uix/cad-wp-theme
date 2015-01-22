@@ -41,7 +41,7 @@ if ( $banner_query->have_posts() ) : ?>
                 
                 <?php 
                 if ( has_post_thumbnail() ) {
-                    the_post_thumbnail('banner');
+                    the_post_thumbnail('full');
                 } ?>
                 
                 <div class="carousel-caption">
@@ -52,7 +52,7 @@ if ( $banner_query->have_posts() ) : ?>
                         <?php echo get_post_meta(get_the_ID(),'banner_text',true); ?>
                     </p>
                     
-                    ?>
+                    
                     
                 </div>
                 

@@ -8,7 +8,7 @@
 
 jQuery(function($){
 
-    var offset = 500;
+    var offset = 400;
 
     $(document).scroll(function() {
         

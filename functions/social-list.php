@@ -20,7 +20,7 @@ if ( ! function_exists( 'call_social_links' ) ) :
 
     if(!empty($bool)) { ?>
 
-    <li><a href="http://facebook.com/<?php echo call_data('facebook'); ?>" target="_blank">
+    <li><a href="http://facebook.com/<?php echo call_data('facebook'); ?>" target="_blank" title="Facebook">
     <i class="fa fa-facebook-square <?php echo $size; ?>"></i></a>
     </li>
     <?php } ?>
@@ -31,7 +31,7 @@ if ( ! function_exists( 'call_social_links' ) ) :
 
     if(!empty($bool)) { ?>
 
-    <li><a href="http://twitter.com/<?php echo call_data('twitter'); ?>" target="_blank">
+    <li><a href="http://twitter.com/<?php echo call_data('twitter'); ?>" target="_blank" title="Twitter">
     <i class="fa fa-twitter-square <?php echo $size; ?>"></i></a>
     </li>
     <?php } ?>
@@ -42,7 +42,7 @@ if ( ! function_exists( 'call_social_links' ) ) :
 
     if(!empty($bool)) { ?>
 
-    <li><a href="http://google-plus.com/<?php echo call_data('google-plus'); ?>" target="_blank">
+    <li><a href="http://google-plus.com/<?php echo call_data('google-plus'); ?>" target="_blank" title="Google Plus">
     <i class="fa fa-google-plus-square <?php echo $size; ?>"></i></a>
     </li>
       <?php } ?>
@@ -53,7 +53,7 @@ if ( ! function_exists( 'call_social_links' ) ) :
 
     if(!empty($bool)) { ?>
 
-    <li><a href="http://linkedin.com/<?php echo call_data('linkedin'); ?>" target="_blank">
+    <li><a href="http://linkedin.com/<?php echo call_data('linkedin'); ?>" target="_blank" title="Linked In">
     <i class="fa fa-linkedin-square <?php echo $size; ?>"></i></a>
     </li>
     <?php } ?>

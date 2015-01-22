@@ -16,6 +16,10 @@
 get_header(); ?>
 
 <div id="content-wrap">
+	
+	<div class="container">
+		<?php call_banner(); ?>
+	</div>
 
 	<div class="container">
 		<section>
