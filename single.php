@@ -10,7 +10,9 @@ get_header(); ?>
 
 <div id="content-wrap">
 
-    <?php breadcrumb(); ?>
+    <div class="container">
+    	<?php breadcrumb(); ?>
+    </div>
 
     <main id="main" class="site-main" role="main">
 
@@ -21,6 +23,12 @@ get_header(); ?>
         <?php endwhile; endif; ?>
 
     </main> <!-- #main -->
+
+	<div class="clearfix">&nbsp;</div>
+	
+    <div class="container">
+    	<?php comments_template(); ?> 
+    </div>
 
 </div> <!-- #content-wrap -->
 

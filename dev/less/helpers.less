@@ -2,17 +2,31 @@
 // Helpers
 // --------------------------------------------------
 
+body {
+	&.admin-bar {
+		//margin-top: 32px;
+	}
+}
+#content-wrap {
+	margin-bottom: 6rem;
+}
+.breadcrumb {
+    margin-top: 3rem;
+}
 ::selection {
-    background: @brand-primary;
+    background: rgba(red(@brand-primary), green(@brand-primary), blue(@brand-primary), 0.5);
+    color: contrast(@brand-primary, @gray-dark, @gray-lighter, 43%);
 }
 
 .img-center {
     margin: 0 auto;
 }
-.pull-left {
+img.pull-left, img.alignleft, a.pull-left, a.alignleft {
+    float: left;
     margin: 0 1rem 1rem 0;
 }
-.pull-right {
+img.pull-right, img.alignright, a.pull-right, a.alignright {
+    float: right;
     margin: 0 0 1rem 1rem;
 }
 
@@ -35,27 +49,4 @@
     margin-bottom:15px;}
 .error-actions .btn { 
     margin-right:10px; 
-}
-            
-#colophon {
-	text-align: center;
-	@media (min-width: @screen-xs) {
-		text-align: left;
-		padding-top: 4rem;
-		padding-bottom: 4rem;
-	}
-	background-color: @gray-darker;
-	color: @gray-lighter; 
-	a {
-		color: @gray-light;
-		&:hover{
-			color: @gray-lighter;
-		}
-	}
-	
-	#customadesign {
-		@media (min-width: @screen-xs) {
-			text-align: right;
-		}
-	}
 }

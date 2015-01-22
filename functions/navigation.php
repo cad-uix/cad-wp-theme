@@ -24,7 +24,7 @@ function menu($menu = '', $menuClass = '', $containerClass = '', $depth = '2'){
     $menuArgument = array(
 	    'theme_location'  => $menu,
 	    'menu'            => $menu,
-	    'container'       => 'nav',
+	    'container'       => false,
 	    'container_class' => $containerClass,
 	    'container_id'    => '',
 	    'menu_class'      => $menuClass,

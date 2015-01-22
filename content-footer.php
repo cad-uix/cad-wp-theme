@@ -13,13 +13,13 @@
     <div class="container">
 
         <div class="row">
-
-            <aside class="col-sm-4">
+        
+            <aside class="col-sm-5">
 
                 <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
 
         
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo.png" alt="">
+                    <img class="img-responsive" src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
         
                 </a>
                 
@@ -37,7 +37,7 @@
 
             </aside>
 
-            <aside class="col-sm-8">
+            <aside class="col-sm-7">
 
                 <div class="row">
 
@@ -49,7 +49,7 @@
 
                         <?php include (TEMPLATEPATH . '/inc/address.php' ); ?>
 
-                        <?php include (TEMPLATEPATH . '/inc/social.php' ); ?>
+                        <?php call_social_links('list-inline', 'fa-2x'); ?>
 
                     </aside>
 
@@ -62,12 +62,12 @@
                         <?php
 
                         $defaults = array(
-                            'theme_location'  => 'header-navigation',
-                            'menu'            => 'header-navigation',
+                            'theme_location'  => 'footer-navigation',
+                            'menu'            => 'footer-navigation',
                             'container'       => false,
                             'container_class' => '',
                             'container_id'    => '',
-                            'menu_class'      => 'list-unstyled',
+                            'menu_class'      => 'list-unstyled footer-navigation',
                             'menu_id'         => '',
                             'echo'            => true,
                             'fallback_cb'     => 'wp_page_menu',
@@ -87,7 +87,6 @@
                     </aside>
 
                     <aside class="col-sm-4">
-
                     
                             <?php 
 

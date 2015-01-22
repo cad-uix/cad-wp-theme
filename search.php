@@ -10,7 +10,9 @@ get_header(); ?>
 
 	<div id="content-wrap">
 		
-	    <?php breadcrumb(); ?>
+	    <div class="container">
+	    	<?php breadcrumb(); ?>
+	    </div>
 
 	    <?php if (have_posts()) : ?>
 

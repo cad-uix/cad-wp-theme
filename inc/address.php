@@ -9,9 +9,6 @@
 
 <address>
 	
-	<strong><?php bloginfo( 'name'); ?></strong> <br>
-
-
 	<?php 
 	
 	$bool = call_data('address');

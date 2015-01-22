@@ -32,8 +32,6 @@ if ( ! function_exists( 'call_post' ) ) :
           <?php endwhile; ?>
           
           </div>
-          
-          <hr>
 
           <?php pagination($post_query ->max_num_pages); ?>
           

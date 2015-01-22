@@ -2,19 +2,38 @@
 // Theme Specific
 // --------------------------------------------------
 
+#user-bar {
+	font-size: 1.2rem;
+	background-color: @gray-lighter;
+	margin-bottom: 2rem;
+	.nav {
+		a {
+			padding: 0.75rem;
+		}
+	}
+	ul, address {
+		margin: 0!important;
+	}
+}
 header {
-
+	margin-bottom: 3rem;
 }
 
 .header-navigation {
-
+	> ul {
+		.nav();
+		.nav-pills();
+	}
+}
+.footer-navigation {
+	> ul {
+		.nav();
+		.nav-stacked();
+	}
 }
 
 #content-wrap {
 
 }
 
-footer {
-	margin-top: 4rem;
-	background-color: @gray-lighter;
-}
+

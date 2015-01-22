@@ -17,7 +17,7 @@
 
             <div class="row">
 
-                <div class="col-xs-8">
+                <div class="col-sm-8">
 
                     <span>All Rights Reserved &copy;
                         <?php echo date( "Y"); echo " "; bloginfo( 'name'); ?> &bull;
@@ -27,7 +27,7 @@
 
                 </div>
 
-                <div class="col-xs-4">
+                <div class="col-sm-4">
 
                     <div id="customadesign">
                         Powered by:

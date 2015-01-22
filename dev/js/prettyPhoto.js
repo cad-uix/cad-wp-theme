@@ -8,6 +8,9 @@
 
 jQuery(function($){
   
-  $("img[class^='wp-image-']").parent().attr('rel', 'prettyPhoto[post-images]');
+  //$("img[class^='wp-image-']").parent().attr('rel', 'prettyPhoto[post-images]');
+
+  $("#wp-entry").find("img").parent().attr("rel", "prettyPhoto");
+  $("[rel^='prettyPhoto']").prettyPhoto();
 
 });

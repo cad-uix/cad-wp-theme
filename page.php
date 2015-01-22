@@ -15,7 +15,9 @@ get_header(); ?>
 
 <div id="content-wrap">
 
-    <?php breadcrumb(); ?>
+    <div class="container">
+    	<?php breadcrumb(); ?>
+    </div>
 
     <main id="main" class="site-main" role="main">
 

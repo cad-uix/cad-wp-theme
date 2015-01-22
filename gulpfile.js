@@ -10,7 +10,7 @@ var   gulp            = require('gulp'),
       notify          = require('gulp-notify'),
       browserSync     = require('browser-sync');
 
-var   virtualHost     = 'http://localhost';
+var   virtualHost     = 'http://localhost/cad-uix';
 
 var handleErrors = function() {
   notify.onError({
@@ -41,9 +41,15 @@ gulp.task('scripts', function () {
     .pipe(browserSync.reload({stream:true}));
 });
 
+// Reload all Browsers
+gulp.task('bs-reload', function () {
+    browserSync.reload();
+});
+
 gulp.task('watch', function () {
   gulp.watch(['./dev/less/**/*.less'], ['styles']);
   gulp.watch(['./dev/js/**/*.js'], ['scripts']);
+  gulp.watch(['./**/*.php'], [ 'bs-reload']);
 });
 
 gulp.task('browser-sync', function () {

@@ -17,15 +17,11 @@ get_header(); ?>
 
 <div id="content-wrap">
 
-	<main id="main" class="site-main" role="main">
-
-    	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
-        <?php get_template_part( 'content', 'page' ); ?>
-
-        <?php endwhile; endif; ?>
-
-    </main> <!-- #main -->
+	<div class="container">
+		<section>
+			<?php call_post('post', 'grid'); ?>
+		</section>
+	</div>
 
 </div> <!-- #content-wrap -->
 

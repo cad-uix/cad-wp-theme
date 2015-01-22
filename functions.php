@@ -34,9 +34,29 @@ if ( ! function_exists( '_cad_theme_setup' ) ) :
          */
         add_theme_support( 'post-thumbnails' );
 
+        add_theme_support( 'custom-header' );
+
     }
 endif; // _s_setup
 add_action( 'after_setup_theme', '_cad_theme_setup' );
+
+
+$defaults = array(
+    'default-image'          => '',
+    'width'                  => 0,
+    'height'                 => 0,
+    'flex-height'            => false,
+    'flex-width'             => false,
+    'uploads'                => true,
+    'random-default'         => false,
+    'header-text'            => false,
+    'default-text-color'     => '',
+    'wp-head-callback'       => '',
+    'admin-head-callback'    => '',
+    'admin-preview-callback' => '',
+);
+add_theme_support( 'custom-header', $defaults );
+
 
 /** 
  * Enqueue Scripts and Styles
@@ -85,6 +105,9 @@ require get_template_directory() . '/functions/breadcrumb.php';
 
 require get_template_directory() . '/functions/pagination.php';
 
+
+require get_template_directory() . '/functions/social-list.php';
+
 /**
  * Bootstrap Nav Walker
  */
@@ -97,7 +120,7 @@ require get_template_directory() . '/functions/navigation.php';
  *
  * Disable support for comments and trackbacks in post types
  */
-require get_template_directory() . '/functions/comments.php';
+// /require get_template_directory() . '/functions/comments.php';
 
 //define('DISALLOW_FILE_EDIT', TRUE);
 //add_filter('show_admin_bar', '__return_false');

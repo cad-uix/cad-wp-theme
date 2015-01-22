@@ -1,0 +1,37 @@
+footer.site-footer {
+	padding: 6rem 0;
+	background-color: @footer-color;
+	color: contrast(@footer-color, @gray-dark, @gray-lighter, 43%);
+	hr {
+		border-top-color: contrast(@footer-color, @gray-light, @gray-lighter, 43%);
+	}
+	a {
+		color: contrast(@footer-color, @gray-dark, @gray-lighter, 43%);
+		&:hover{
+			color: @gray-lighter;
+		}
+	}
+}
+#colophon {
+	text-align: center;
+	@media (min-width: @screen-xs) {
+		text-align: left;
+		padding-top: 4rem;
+		padding-bottom: 4rem;
+	}
+	background-color: darken(@footer-color, 10%);
+	color: contrast(darken(@footer-color, 10%), @gray-dark, @gray-lighter, 43%);
+	
+	a {
+		color: contrast(@footer-color, @gray-dark, @gray-lighter, 43%);
+		&:hover{
+			color: @gray-lighter;
+		}
+	}
+	
+	#customadesign {
+		@media (min-width: @screen-xs) {
+			text-align: right;
+		}
+	}
+}

@@ -25,6 +25,4 @@
             + Read More
         </a></p>
         
-        <?php include (TEMPLATEPATH . '/inc/meta.php' ); ?>
-        
     </div>
