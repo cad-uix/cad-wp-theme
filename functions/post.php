@@ -8,7 +8,7 @@
 
 if ( ! function_exists( 'call_post' ) ) :
 
-  function call_post($post = 'post', $display = 'list', $category_name = '', $range = 5, $column = 3)
+  function call_post($post = 'post', $display = 'list', $category_name = '', $range = '6', $column = 3)
   {
         $count = 0;
 
@@ -27,26 +27,36 @@ if ( ! function_exists( 'call_post' ) ) :
           <div class="post-list row">
 
           <?php while ( $post_query->have_posts() ) : $post_query->the_post(); ?>
-             
+              
+              <?php $count++; ?>
+
               <?php include (TEMPLATEPATH . '/view/' . $display . '.php' ); ?>
 
               <?php 
-                $count++;
-                //echo $column;
-                if ( 0 == $count % $column) {
-                ?>
-                <div class="clearfix"></div>
-                  <?php
-                }
-                
+                  if ( 0 == $count % $column && $display == 'grid') {
+                    echo '<div class="clearfix"></div>';
+                  }
               ?>
 
-          <?php endwhile; ?>
+            <?php endwhile; ?>
           
           </div>
 
-          <?php pagination($post_query ->max_num_pages); ?>
+          <?php
+            if ( function_exists('wp_bootstrap_pagination') )
+              wp_bootstrap_pagination();
+          ?>
+
+          <?php else : ?>
+
+                <div class="page-header">
+                
+                    <h2>Nothing found</h2>
+
+                </div>
+                    
+            <?php endif; 
           
-      <?php endif; 
+
   }
 endif;

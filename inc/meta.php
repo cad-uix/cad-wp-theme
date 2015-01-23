@@ -6,7 +6,7 @@
  * @author marcelbadua
  */
 ?>
-
+<small>
 <ul class="meta list-inline">
 	
 	<li><i class="fa fa-user text-muted"></i> <?php the_author_link(); ?></li>
@@ -39,6 +39,7 @@
 	<li><?php the_tags('<i class="fa fa-tag text-muted"></i> '); ?></li>
 
 </ul>
+</small>
 
 <div class="clearfix">
 &nbsp;</div>
