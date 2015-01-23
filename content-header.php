@@ -90,17 +90,18 @@
                     'container'       => false,
                     'container_class' => '',
                     'container_id'    => '',
-                    'menu_class'      => 'list-unstyled header-navigation hidden-xs',
+                    'menu_class'      => 'nav nav-pills header-navigation hidden-xs',
                     'menu_id'         => '',
                     'echo'            => true,
-                    'fallback_cb'     => 'wp_page_menu',
+                    //'fallback_cb'     => 'wp_page_menu',
                     'before'          => '',
                     'after'           => '',
                     'link_before'     => '',
                     'link_after'      => '',
                     'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                    'depth'           => 0,
-                    'walker'          => ''
+                    'depth'           => 2,
+                    'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+                'walker'            => new wp_bootstrap_navwalker()
                 );
 
                 wp_nav_menu( $defaults );

@@ -8,8 +8,9 @@
 
 if ( ! function_exists( 'call_post' ) ) :
 
-  function call_post($post = 'post', $display = 'list', $category_name = '', $range = 5)
+  function call_post($post = 'post', $display = 'list', $category_name = '', $range = 5, $column = 3)
   {
+        $count = 0;
 
         $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 
@@ -28,6 +29,17 @@ if ( ! function_exists( 'call_post' ) ) :
           <?php while ( $post_query->have_posts() ) : $post_query->the_post(); ?>
              
               <?php include (TEMPLATEPATH . '/view/' . $display . '.php' ); ?>
+
+              <?php 
+                $count++;
+                //echo $column;
+                if ( 0 == $count % $column) {
+                ?>
+                <div class="clearfix"></div>
+                  <?php
+                }
+                
+              ?>
 
           <?php endwhile; ?>
           

@@ -49,9 +49,9 @@ get_header(); ?>
                 </div>
 
                 <?php while (have_posts()) : the_post(); ?>
-
+<div class="row">
                     <?php include (TEMPLATEPATH . '/view/list.php' ); ?>
-
+</div>
                 <?php endwhile; ?>
                 
                 <?php pagination(); ?>

@@ -27,7 +27,7 @@ gulp.task('styles', function () {
     .pipe(less())
     .on('error', handleErrors)
     .pipe(csscomb())
-    .pipe(minify())
+    //.pipe(minify())
     .pipe(gulp.dest('./css'))
     .pipe(browserSync.reload({stream:true}));
 });

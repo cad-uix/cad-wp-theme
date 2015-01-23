@@ -1,4 +1,4 @@
- <div  id="post-<?php the_ID(); ?>" <?php post_class('col-sm-4 view-grid'); ?>>
+<div  id="post-<?php the_ID(); ?>" <?php post_class('col-sm-4 view-grid'); ?>>
     
         <?php if ( has_post_thumbnail() ) { ?>
         <a class="pull-left" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
