@@ -2,7 +2,7 @@
 /**
  * The template for displaying 404 pages (not found).
  *
- * @package oracle
+ * @package cad-wp-theme
  * @author marcelbadua
  */
 
@@ -24,7 +24,7 @@ get_header(); ?>
 					
 					<div class="clearfix">&nbsp;</div>
 					
-					<a href="<?php bloginfo("url"); ?>" class="btn btn-info"><i class="fa fa-home"></i>Return to home page</a>
+					<a href="<?php bloginfo( "url" ); ?>" class="btn btn-info">Return to home page</a>
 
 					<div class="clearfix">&nbsp;</div>
 
@@ -37,5 +37,7 @@ get_header(); ?>
 	</div>
 
 </div>
+
+<div class="clearfix">&nbsp;</div>
 
 <?php get_footer(); ?>

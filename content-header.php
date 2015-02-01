@@ -2,7 +2,7 @@
 /** 
  * Content for displaying Header 
  * 
- * @package oracle 
+ * @package cad-wp-theme 
  * @author marcelbadua 
  */ 
 ?>
@@ -19,10 +19,10 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="brand" <a href="<?php echo esc_url(home_url('/')); ?>" rel="home" title="<?php bloginfo('name'); ?>">
-                    <?php if (get_header_image() != '' ) { ?>
+                    <?php if ( get_header_image() != '' ) { ?>
                     <img class="img-responsive" src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="<?php bloginfo('name'); ?>" />
                     <?php } else { ?>
-                    <?php bloginfo( 'name'); ?>
+                    <?php bloginfo( 'name' ); ?>
                     <?php } ?>
                 </a>
             </div>
@@ -59,7 +59,7 @@
                 	'fallback_cb' => 'wp_bootstrap_navwalker::fallback', 
                 	'walker' => new wp_bootstrap_navwalker()
                 	); 
-                	wp_nav_menu($defaults); 
+                	wp_nav_menu( $defaults ); 
                 ?>
 
             </div>

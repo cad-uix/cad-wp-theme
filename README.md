@@ -36,12 +36,6 @@ includes an admin menu page for client data like email, phone, address and socia
 	
 $type: address, number, email, company, facebook, linkedin, twitter, google-plus
 
-### call_banner();
-
-Invokes the content-slideshow template
-
-    <?php call_banner(); ?>
-
 ### call_social_links();
 
 Call Social list, you can add your custom class

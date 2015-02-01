@@ -2,7 +2,7 @@
 /**
  * The template for displaying all single posts.
  *
- * @package oracle
+ * @package cad-wp-theme
  * @author marcelbadua
  */
 
@@ -11,7 +11,9 @@ get_header(); ?>
 <div id="content-wrap">
 
     <div class="container">
+
     	<?php breadcrumb(); ?>
+
     </div>
 
     <main id="main" class="site-main container" role="main">
@@ -27,9 +29,13 @@ get_header(); ?>
 	<div class="clearfix">&nbsp;</div>
 	
     <div class="container">
+
     	<?php comments_template(); ?> 
+        
     </div>
 
 </div> <!-- #content-wrap -->
+
+<div class="clearfix">&nbsp;</div>
 
 <?php get_footer(); ?>

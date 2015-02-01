@@ -2,17 +2,13 @@
 /**
  * Content for Blog
  *
- * @package oracle
+ * @package cad-wp-theme
  * @author marcelbadua
  */
-?>
-
-
-<?php
 
 $loop = 1;
 
-$column = 3;
+$column = 4;
 
 $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 
@@ -31,19 +27,17 @@ if ( $blog_query->have_posts() ) : ?>
 
     while ( $blog_query->have_posts() ) : $blog_query->the_post(); ?>
 
-        <div id="post-<?php the_ID(); ?>" <?php post_class('col-sm-' . ( 12 / $column ) ); ?>>
-
-
+        <div id="post-<?php the_ID(); ?>" <?php post_class( 'col-sm-' . ( 12 / $column ) ); ?>>
 
             <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-                <?php the_title("<h4>", "</h4>"); ?>
+                <?php the_title( "<h4>", "</h4>" ); ?>
             </a>
 
             <?php include (TEMPLATEPATH . '/inc/meta.php' ); ?>
             
-                        <?php if ( has_post_thumbnail() ) { ?>
+            <?php if ( has_post_thumbnail() ) { ?>
                 <a class="pull-right" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-                    <?php the_post_thumbnail('thumbnail', array('class' => 'img-thumbnail' )); ?>
+                    <?php the_post_thumbnail( 'thumbnail', array( 'class' => 'img-thumbnail' ) ); ?>
                 </a>
             <?php } ?>
             
@@ -55,7 +49,7 @@ if ( $blog_query->have_posts() ) : ?>
 
     <?php 
 
-        if ( 0 == $loop % $column) {
+        if ( 0 == $loop % $column ) {
             echo '<div class="clearfix"></div>';
         } 
 

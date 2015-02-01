@@ -2,11 +2,11 @@
 /**
 * Creates a custom Post Type Banner and function for displaying Banner on template.
 *
-* @package oracle
+* @package cad-wp-theme
 * @author marcelbadua
 */
 
-if( !function_exists('register_banner') ):
+if( !function_exists( 'register_banner' ) ):
 
 /*
 * custom post type for banner
@@ -32,7 +32,7 @@ $args = array(
 'description'   => 'Banners',
 'public'        => true,
 'menu_position' => 5,
-'supports'      => array( 'title', 'thumbnail'),
+'supports'      => array( 'title', 'thumbnail' ),
 'has_archive'   => true,
 );
 register_post_type( 'banner', $args );
@@ -46,7 +46,7 @@ function customposttype_image_box() {
 remove_meta_box( 'postimagediv', 'customposttype', 'side' );
 add_meta_box('postimagediv', __('Banner Image'), 'post_thumbnail_meta_box', 'banner', 'normal', 'high');
 }
-add_action('do_meta_boxes', 'customposttype_image_box');
+add_action( 'do_meta_boxes', 'customposttype_image_box' );
 
 /*
 * creates custom field for banner text
@@ -72,7 +72,7 @@ $allowed = array(
 )
 );
 
-$your_predefined_value = isset($_POST['banner_text']) ? $_POST['banner_text'] : '';
+$your_predefined_value = isset( $_POST['banner_text'] ) ? $_POST['banner_text'] : '';
 
 if( $your_predefined_value )
 update_post_meta($post_id,'banner_text',$your_predefined_value);
@@ -90,11 +90,6 @@ $your_predefined_value = get_post_meta($post->ID,'banner_text',true);
 <textarea name="banner_text" id="banner_text" type="text"  value="" class="mws-textinput" style="width: 100%;" rows="8"><?php echo $your_predefined_value; ?></textarea>
 
 <?php
-}
-
-
-function call_banner() {
-get_template_part( 'content', 'banner' );
 }
 
 endif;

@@ -8,7 +8,7 @@
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package oracle
+ * @package cad-wp-theme
  * @author marcelbadua
  */
 
@@ -16,22 +16,26 @@
 get_header(); ?>
 
 <div id="content-wrap">
+
 	<div class="container">
-		<?php call_banner(); ?>
+
+		<?php get_template_part( 'content', 'banner' ); ?>
+
 	</div>
 
 	<div class="clearfix">&nbsp;</div>
 	
 	<div class="container">
 
-			<?php get_template_part('content', 'blog'); ?>
+		<?php get_template_part( 'content', 'blog' ); ?>
+
 	</div>
 
 	<div class="clearfix">&nbsp;</div>
 
 	<div class="container">
 
-		<?php  echo do_shortcode( '[gravityform id="1" name="Contact"]');?>
+		<?php echo do_shortcode( '[gravityform id="1" name="Contact"]' );?>
 
 	</div>
 

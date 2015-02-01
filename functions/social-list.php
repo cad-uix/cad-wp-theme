@@ -2,13 +2,13 @@
 /**
  * Function for displaying social link
  *
- * @package oracle
+ * @package cad-wp-theme
  * @author marcelbadua
  */
 
-if ( ! function_exists( 'call_social_links' ) ) :
+if  (  ! function_exists (  'call_social_links'  )   )  :
 
-  function call_social_links($class = '')
+  function call_social_links ( $class = '' ) 
   {
 ?>
 
@@ -16,11 +16,15 @@ if ( ! function_exists( 'call_social_links' ) ) :
 
   <?php 
 
-    $bool = call_data('facebook');
+  $options = get_option ( 'plugin_options' ) ;
 
-    if(!empty($bool)) { ?>
+    
 
-    <li><a href="http://facebook.com/<?php echo call_data('facebook'); ?>" target="_blank" title="Facebook">
+    $bool = $options['client_facebook'];
+
+    if ( !empty ( $bool )  )  { ?>
+
+    <li><a href="https://www.facebook.com/<?php echo $options['client_facebook']; ?>" target="_blank" title="Facebook">
     
     <i class="icon cad-icon-facebook-square"></i>
 
@@ -31,33 +35,33 @@ if ( ! function_exists( 'call_social_links' ) ) :
 
     <?php 
     
-    $bool = call_data('twitter');
+    $bool = $options['client_twitter']; 
 
-    if(!empty($bool)) { ?>
+    if ( !empty ( $bool )  )  { ?>
 
-    <li><a href="http://twitter.com/<?php echo call_data('twitter'); ?>" target="_blank" title="Twitter">
+    <li><a href="https://twitter.com/<?php echo $options['client_twitter']; ?>" target="_blank" title="Twitter">
     <i class="icon cad-icon-twitter-square"></i></a>
     </li>
     <?php } ?>
 
     <?php 
     
-    $bool = call_data('google-plus');
+    $bool = $options['client_google_plus']; 
 
-    if(!empty($bool)) { ?>
+    if ( !empty ( $bool )  )  { ?>
 
-    <li><a href="http://google-plus.com/<?php echo call_data('google-plus'); ?>" target="_blank" title="Google Plus">
+    <li><a href="https://www.google.com/+<?php echo $options['client_google_plus']; ?>" target="_blank" title="Google Plus">
     <i class="icon cad-icon-google-plus"></i></a>
     </li>
       <?php } ?>
 
       <?php 
     
-    $bool = call_data('linkedin');
+    $bool = $options['client_linkedin']; 
 
-    if(!empty($bool)) { ?>
+    if ( !empty ( $bool )  )  { ?>
 
-    <li><a href="http://linkedin.com/<?php echo call_data('linkedin'); ?>" target="_blank" title="Linked In">
+    <li><a href="http://www.linkedin.com/<?php echo $options['client_linkedin']; ?>" target="_blank" title="Linked In">
     <i class="icon cad-icon-linkedin-square"></i></a>
     </li>
     <?php } ?>

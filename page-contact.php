@@ -4,7 +4,7 @@
  *
  * The template for displaying Contact Form includes Google Map.
  *
- * @package oracle
+ * @package cad-wp-theme
  * @author marcelbadua
  */
 
@@ -16,7 +16,7 @@ get_header(); ?>
 
             <?php breadcrumb(); ?>
 
-            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+            <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
             <article class="post" id="post-<?php the_ID(); ?>">
 
@@ -37,9 +37,12 @@ get_header(); ?>
                     <div class="entry col-sm-6">
 
                         
-                	<?php 
+                	<?php
+
+                   $options = get_option( 'plugin_options' ); 
                 	
-                	$bool = call_data('address');
+                	$bool = $options['client_address'];
+
                 
                 	if(!empty($bool)) { ?>
                 	
@@ -51,7 +54,7 @@ get_header(); ?>
                         
                         <span id="map-address">
                         
-                            <?php echo call_data('address'); ?> 
+                            <?php echo $options['client_address']; ?> 
                         
                         </span>
 
@@ -123,5 +126,6 @@ get_header(); ?>
 
     </div>
     
+<div class="clearfix">&nbsp;</div>
 
 <?php get_footer(); ?>

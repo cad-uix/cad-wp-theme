@@ -4,7 +4,7 @@
  *
  * The template for displaying Blog list.
  *
- * @package oracle
+ * @package cad-wp-theme
  * @author marcelbadua
  */
 
@@ -27,5 +27,7 @@ get_header();  the_post(); ?>
         </div>
 
     </div>
+
+    <div class="clearfix">&nbsp;</div>
 
 <?php get_footer(); ?>

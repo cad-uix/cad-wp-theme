@@ -2,7 +2,7 @@
 /**
  * Adds Breadcrumb Navigation Bootstrap Ready
  *
- * @package oracle
+ * @package cad-wp-theme
  * @author marcelbadua
  */
 

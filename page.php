@@ -7,7 +7,7 @@
  * and that other 'pages' on your WordPress site will use a
  * different template.
  *
- * @package oracle
+ * @package cad-wp-theme
  * @author marcelbadua
  */
 
@@ -16,7 +16,9 @@ get_header(); ?>
 <div id="content-wrap">
 
     <div class="container">
+
     	<?php breadcrumb(); ?>
+    	
     </div>
    
     <main id="main" class="site-main container" role="main">
@@ -32,5 +34,7 @@ get_header(); ?>
      </div>
 
 </div> <!-- #content-wrap -->
+
+<div class="clearfix">&nbsp;</div>
 
 <?php get_footer(); ?>

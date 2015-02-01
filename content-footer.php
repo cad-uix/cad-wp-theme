@@ -2,7 +2,7 @@
 /** 
  * Content for displaying Footer 
  * 
- * @package oracle 
+ * @package cad-wp-theme 
  * @author marcelbadua
  */ 
 ?>
@@ -15,9 +15,9 @@
         
             <aside class="col-sm-2">
 
-                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo( 'name'); ?>">
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo( 'name' ); ?>">
 
-                    <?php if (get_header_image() != '')
+                    <?php if ( get_header_image() != '' )
                     { ?>
                         <img class="img-responsive" src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="<?php bloginfo( 'name'); ?>" />  
                     <?php
@@ -25,7 +25,7 @@
                     else
                     {
                         ?>
-                        <h4> <?php bloginfo( 'name'); ?></h4>
+                        <h4> <?php bloginfo( 'name' ); ?></h4>
                     <?php
                     }
                     ?>
@@ -34,34 +34,28 @@
             </aside>
 
             <aside class="col-sm-6">
-                
-                
-                <h4> <?php bloginfo( 'name'); ?></h4>
-                
-                <?php $bool = call_data( 'about'); 
+                            
+                <h4> <?php bloginfo( 'name' ); ?></h4>
 
-                if(!empty($bool)) { ?>
+                <?php
+                
+                $options = get_option( 'plugin_options' );
 
-                <p>
-                    <?php echo call_data( 'about'); ?>
-                </p>
-
-                <?php } ?>
+                echo '<p>'.$options['client_about'] . '</p>';
+                
+                ?>
                 
             </aside>
 
             <aside class="col-sm-4">
 
-                        <h4>Contact Us</h4>
+                <h4>Contact Us</h4>
 
-                        <?php include (TEMPLATEPATH . '/inc/address.php' ); ?>
+                <?php include ( TEMPLATEPATH . '/inc/address.php' ); ?>
 
-                        <?php call_social_links('list-inline'); ?>
+                <?php call_social_links( 'list-inline' ); ?>
 
-                    </aside>
-
-
-            
+            </aside>
 
         </div>
 

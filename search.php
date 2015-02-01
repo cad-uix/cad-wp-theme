@@ -2,7 +2,7 @@
 /**
  * Template for displaying search results.
  *
- * @package oracle
+ * @package cad-wp-theme
  * @author marcelbadua
  */
 
@@ -11,7 +11,9 @@ get_header(); ?>
 	<div id="content-wrap">
 		
 	    <div class="container">
+
 	    	<?php breadcrumb(); ?>
+
 	    </div>
 
 	    <main class="container" role="main">
@@ -24,13 +26,13 @@ get_header(); ?>
 
 		</div>
 
-		<?php while (have_posts()) : the_post(); ?>
+		<?php while ( have_posts() ) : the_post(); ?>
 
         
 
 
-<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-                <?php the_title("<h4>", "</h4>"); ?>
+			<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+                <?php the_title( "<h4>", "</h4>" ); ?>
             </a>
 
                    <?php include (TEMPLATEPATH . '/inc/meta.php' );
@@ -53,5 +55,7 @@ get_header(); ?>
 	    </main> <!-- #main -->
 	   
 	</div>
+
+	<div class="clearfix">&nbsp;</div>
 
 <?php get_footer(); ?>

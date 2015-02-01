@@ -4,7 +4,7 @@
  *
  * Contains the closing of the #content div and all content after
  *
- * @package oracle
+ * @package cad-wp-theme
  * @author marcelbadua
  */
 ?>
@@ -20,7 +20,7 @@
                 <div class="col-sm-8">
 
                     <span>All Rights Reserved &copy;
-                        <?php echo date( "Y"); echo " "; bloginfo( 'name'); echo " "; bloginfo( 'description'); ?>
+                        <?php echo date( "Y" ); echo " "; bloginfo( 'name'); echo " "; bloginfo( 'description' ); ?>
                     </span>
 
                 </div>

@@ -2,7 +2,7 @@
 /**
  * Functions
  *
- * @package oracle
+ * @package cad-wp-theme
  * @author marcelbadua
 */
 
@@ -27,9 +27,9 @@ if ( ! function_exists( '_cad_theme_setup' ) ) :
          * Common Navigation Location
          */
         register_nav_menus( array(
-            'header-navigation' => __('Header Navigation'),
-            'footer-navigation' => __('Footer Navigation'),
-            'sidebar-navigation' => __('Sidebar Navigation')
+            'header-navigation' => __( 'Header Navigation' ),
+            'footer-navigation' => __( 'Footer Navigation' ),
+            'sidebar-navigation' => __( 'Sidebar Navigation' )
         ));
 
     }

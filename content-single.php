@@ -2,7 +2,7 @@
 /**
  * Content for displaying Single
  *
- * @package oracle
+ * @package cad-wp-theme
  * @author marcelbadua
  */
 ?>
@@ -17,15 +17,7 @@
     
     <?php include (TEMPLATEPATH . '/inc/meta.php' ); ?>
     
-    <?php if ( has_post_thumbnail() ) { ?>
-    
-    <div class="featured-image">
-    
-        <?php the_post_thumbnail('medium', array('class' => 'img-responsive pull-left')); ?>
-        
-    </div>
-    
-    <?php } ?>
+    <?php if ( has_post_thumbnail() )  the_post_thumbnail( 'full', array( 'class' => 'img-responsive' ) ); ?> 
     
     <div class="entry">
         

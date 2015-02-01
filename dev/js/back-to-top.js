@@ -2,7 +2,7 @@
  *
  * Script for Back To Top
  *
- * @package oracle
+ * @package cad-wp-theme
  * @author marcelbadua
  */
 

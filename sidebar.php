@@ -2,7 +2,7 @@
 /**
  * The sidebar containing the main widget area.
  *
- * @package oracle
+ * @package cad-wp-theme
  * @author marcelbadua
  */
 

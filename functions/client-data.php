@@ -2,193 +2,100 @@
 /**
  * Function for Client Data and Social Network Link
  *
- * @package oracle
+ * @package cad-wp-theme
  * @author marcelbadua
  */
 
-add_action( 'admin_init', 'client_data_init' );
-add_action( 'admin_menu', 'client_data_add_page' );
+add_action (  'admin_menu', 'create_theme_options_page'  ) ;
 
-/**
- * Init plugin options to white list our options
- */
-function client_data_init(){
-	register_setting( 
-		'client_data', 
-		'client_data_options', 
-		'client_data_validate' 
-	);
+function create_theme_options_page (  )  {  
+	add_menu_page (  'Client Data', 'Client Data', 'edit_theme_options',  'theme_options',  'build_options_page', '', 2  ) ;
 }
 
-/**
- * Load up the menu page
- */
-function client_data_add_page() {
-	add_menu_page( 
-		'Client Data',
-		'Client Data',
-		'edit_theme_options', 
-		'theme_options', 
-		'client_data_do_page',
-		'',
-		2 
-	);
-}
-
-/**
- * Call on Theme
- */
-function call_data($entry) {
-    $options = get_option('client_data_options');
-    return $options[$entry];
-}
-
-/**
- * Create the options page
- */
-function client_data_do_page() {
-
-	global $select_options, $radio_options;
-
-	if ( ! isset( $_REQUEST['settings-updated'] ) )
-		$_REQUEST['settings-updated'] = false;
-
-	?>
-	<div class="wrap">
-
-		<?php screen_icon(); echo "<h2>" . wp_get_theme() . __( ' Client Data', 'clientdata' ) . "</h2>"; ?>
-
-		<?php if ( false !== $_REQUEST['settings-updated'] ) : ?>
-		<div class="updated fade"><p><strong><?php _e( 'Options saved', 'clientdata' ); ?></strong></p></div>
-		<?php endif; ?>
-
-		<form method="post" action="options.php">
-		
-		<?php settings_fields( 'client_data' ); ?>
-		
-		<?php $options = get_option('client_data_options'); ?>
-
-			<table class="form-table">
-
-			<tr valign="top">
-					<th colspan="2">
-						<h3>General Information</h3>
-						<hr>
-					</th>
-				</tr>
-
-				<tr valign="top">
-					<th scope="row">
-						<?php _e( 'Contact Number', 'clientdata' ); ?>
-					</th>
-					<td>
-						<input id="client_data_options[number]" class="regular-text" type="text" name="client_data_options[number]" value="<?php esc_attr_e( $options['number'] ); ?>" />
-					</td>
-				</tr>
-
-				<tr valign="top">
-					<th scope="row">
-						<?php _e( 'Email', 'clientdata' ); ?>
-					</th>
-					<td>
-						<input id="client_data_options[email]" class="regular-text" type="text" name="client_data_options[email]" value="<?php esc_attr_e( $options['email'] ); ?>" />
-					</td>
-				</tr>
-
-				<tr valign="top">
-					<th scope="row">
-						<?php _e( 'Address', 'clientdata' ); ?>
-					</th>
-					<td>
-						<input id="client_data_options[address]" class="regular-text" type="text" name="client_data_options[address]" value="<?php esc_attr_e( $options['address'] ); ?>" />	
-					</td>
-				</tr>
-
-				<tr valign="top">
-					<th scope="row">
-						<?php _e( 'About ', 'clientdata' ); ?>
-					</th>
-					<td>
-						<textarea id="client_data_options[about]" class="large-text" cols="50" rows="10" name="client_data_options[about]"><?php echo esc_textarea( $options['about'] ); ?></textarea>
-						<label class="description" for="client_data_options[about]"><?php _e( 'Short details about the company', 'clientdata' ); ?></label>
-					</td>
-				</tr>
-
-				<tr valign="top">
-					<th colspan="2">
-						<h3>Social Links</h3>
-						** Please add full link
-						<hr>
-					</th>
-				</tr>
-
-				<tr valign="top">
-					<th scope="row">
-						<?php _e( 'Facebook', 'clientdata' ); ?>
-					</th>
-					<td>
-						<input id="client_data_options[facebook]" class="regular-text" type="text" name="client_data_options[facebook]" value="<?php esc_attr_e( $options['facebook'] ); ?>" />
-					</td>
-				</tr>
-
-				<tr valign="top">
-					<th scope="row">
-						<?php _e( 'Twitter', 'clientdata' ); ?>
-					</th>
-					<td>
-						<input id="client_data_options[twitter]" class="regular-text" type="text" name="client_data_options[twitter]" value="<?php esc_attr_e( $options['twitter'] ); ?>" />	
-					</td>
-				</tr>
-
-				<tr valign="top">
-					<th scope="row">
-						<?php _e( 'Google Plus', 'clientdata' ); ?>
-					</th>
-					<td>
-						<input id="client_data_options[google-plus]" class="regular-text" type="text" name="client_data_options[google-plus]" value="<?php esc_attr_e( $options['google-plus'] ); ?>" />	
-					</td>
-				</tr>
-
-				<tr valign="top">
-					<th scope="row">
-						<?php _e( 'Linked In', 'clientdata' ); ?>
-					</th>
-					<td>
-						<input id="client_data_options[linkedin]" class="regular-text" type="text" name="client_data_options[linkedin]" value="<?php esc_attr_e( $options['linkedin'] ); ?>" />	
-					</td>
-				</tr>
-
-			</table>
-
-			<p class="submit">
-				<input type="submit" class="button-primary" value="<?php _e( 'Save Options', 'clientdata' ); ?>" />
+function build_options_page (  )  {?>  
+	<div class="wrap">    
+		<h2>Client Data Options</h2>    
+		<form method="post" action="options.php" enctype="multipart/form-data">  
+			<?php settings_fields ( 'plugin_options' ) ; ?>  
+			<?php do_settings_sections ( __FILE__ ) ; ?>  
+			
+			<p class="submit">    
+				<input name="Submit" type="submit" class="button-primary" value="<?php esc_attr_e ( 'Save Changes' ) ; ?>" />  
 			</p>
 		</form>
 	</div>
-	<?php
+<?php
 }
 
-/**
- * Sanitize and validate input. Accepts an array, return a sanitized array.
- */
-function client_data_validate( $input ) {
+add_action ( 'admin_init', 'register_and_build_fields' ) ;
 
-	$input['number'] = wp_filter_nohtml_kses( $input['number'] );
+function register_and_build_fields (  )  { 
 
-	$input['email'] = wp_filter_nohtml_kses( $input['email'] );
+	register_setting ( 'plugin_options', 'plugin_options', 'validate_setting' ) ;
 
-	$input['address'] = wp_filter_nohtml_kses( $input['address'] );
+	add_settings_section ( 'main_section', 'Client Data', 'section_cb', __FILE__ ) ;
 
-	$input['facebook'] = wp_filter_nohtml_kses( $input['facebook'] );
+	add_settings_field ( 'client_address', 'Address:', 'client_address_setting', __FILE__, 'main_section' ) ;
 
-	$input['twitter'] = wp_filter_nohtml_kses( $input['twitter'] );
+	add_settings_field ( 'client_phone', 'Phone:', 'client_phone_setting', __FILE__, 'main_section' ) ;
 
-	$input['google-plus'] = wp_filter_nohtml_kses( $input['google-plus'] );
+	add_settings_field ( 'client_email', 'Email:', 'client_email_setting', __FILE__, 'main_section' ) ;
 
-	$input['linkedin'] = wp_filter_nohtml_kses( $input['linkedin'] );
+	add_settings_field ( 'client_about', 'About:', 'client_about_setting', __FILE__, 'main_section' ) ;
 
-	// Say our textarea option must be safe text with the allowed tags for posts
-	$input['about'] = wp_filter_post_kses( $input['about'] );
+	add_settings_field ( 'client_facebook', 'Facebook:', 'client_facebook_setting', __FILE__, 'main_section' ) ;
 
-	return $input;
+	add_settings_field ( 'client_twitter', 'Twitter:', 'client_twitter_setting', __FILE__, 'main_section' ) ;
+
+	add_settings_field ( 'client_google_plus', 'Google Plus:', 'client_google_plus_setting', __FILE__, 'main_section' ) ;
+
+	add_settings_field ( 'client_linkedin', 'Linked In:', 'client_linkedin_setting', __FILE__, 'main_section' ) ;
+}
+
+function validate_setting ( $plugin_options )  {  
+	return $plugin_options;
+}
+
+function section_cb (  )  {}
+
+function client_address_setting (  )  {  
+	$options = get_option ( 'plugin_options' ) ;  
+	echo "<input name='plugin_options[client_address]' class='regular-text' type='text' value='{$options['client_address']}' />";
+}
+
+function client_phone_setting (  )  {  
+	$options = get_option ( 'plugin_options' ) ;  
+	echo "<input name='plugin_options[client_phone]' class='regular-text' type='text' value='{$options['client_phone']}' />";
+}
+
+function client_email_setting (  )  {  
+	$options = get_option ( 'plugin_options' ) ;  
+	echo "<input name='plugin_options[client_email]' class='regular-text' type='text' value='{$options['client_email']}' />";
+}
+
+function client_about_setting (  )  {  
+	$options = get_option ( 'plugin_options' ) ;
+	echo "<textarea rows='5' class='large-text' id='plugin_options[client_about]' name='plugin_options[client_about]'>{$options['client_about']}</textarea>
+	<p class='description'>In a few words, explain what your company is about.</p>
+	";
+}
+
+function client_facebook_setting (  )  {  
+	$options = get_option ( 'plugin_options' ) ;  
+	echo "https://www.facebook.com/<input name='plugin_options[client_facebook]' class='regular-text' type='text' value='{$options['client_facebook']}' />";
+}
+
+function client_twitter_setting (  )  {  
+	$options = get_option ( 'plugin_options' ) ;  
+	echo "https://twitter.com/<input name='plugin_options[client_twitter]' class='regular-text' type='text' value='{$options['client_twitter']}' />";
+}
+
+function client_google_plus_setting (  )  {  
+	$options = get_option ( 'plugin_options' ) ;  
+	echo "https://www.google.com/+<input name='plugin_options[client_google_plus]' class='regular-text' type='text' value='{$options['client_google_plus']}' />";
+}
+
+function client_linkedin_setting (  )  {  
+	$options = get_option ( 'plugin_options' ) ;  
+	echo "http://www.linkedin.com/<input name='plugin_options[client_linkedin]' class='regular-text' type='text' value='{$options['client_linkedin']}' />";
 }

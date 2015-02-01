@@ -2,7 +2,7 @@
 /**
  * The searchform containing search form for blog search.
  *
- * @package oracle
+ * @package cad-wp-theme
  * @author marcelbadua
  */
 
