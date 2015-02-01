@@ -31,7 +31,7 @@ function client_data_add_page() {
 		'theme_options', 
 		'client_data_do_page',
 		'',
-		59 
+		2 
 	);
 }
 

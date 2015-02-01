@@ -14,6 +14,8 @@ get_header(); ?>
 	    	<?php breadcrumb(); ?>
 	    </div>
 
+	    <main class="container" role="main">
+
 	    <?php if (have_posts()) : ?>
 
 		<div class="page-header">
@@ -24,17 +26,21 @@ get_header(); ?>
 
 		<?php while (have_posts()) : the_post(); ?>
 
-        <div <?php post_class() ?> id="post-<?php the_ID(); ?>">
+        
 
-            <h2><?php the_title(); ?></h2>
 
-            <div class="entry">
+<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+                <?php the_title("<h4>", "</h4>"); ?>
+            </a>
 
-                <?php the_excerpt(); ?>
+                   <?php include (TEMPLATEPATH . '/inc/meta.php' );
 
-            </div>
+                    ?>
 
-        </div>
+                    <p> <?php the_excerpt(); ?></p>
+
+                    <p><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="btn btn-primary btn-xs"> Read More <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></a></p>
+                
 
         <?php endwhile; ?>
 		
@@ -43,6 +49,8 @@ get_header(); ?>
 		<h2>No posts found.</h2>
 
 	    <?php endif; ?>
+
+	    </main> <!-- #main -->
 	   
 	</div>
 

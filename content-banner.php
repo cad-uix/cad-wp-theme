@@ -52,8 +52,6 @@ if ( $banner_query->have_posts() ) : ?>
                         <?php echo get_post_meta(get_the_ID(),'banner_text',true); ?>
                     </p>
                     
-                    
-                    
                 </div>
                 
             </div>

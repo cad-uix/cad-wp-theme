@@ -14,13 +14,13 @@ get_header(); ?>
     	<?php breadcrumb(); ?>
     </div>
 
-    <main id="main" class="site-main" role="main">
+    <main id="main" class="site-main container" role="main">
 
-    	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+    	<?php while (have_posts()) : the_post(); ?>
 
         <?php get_template_part( 'content', 'single' ); ?>
 
-        <?php endwhile; endif; ?>
+        <?php endwhile; ?>
 
     </main> <!-- #main -->
 

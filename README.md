@@ -1,18 +1,20 @@
-# Oracle Wordpress Theme Framework
+# CAD Wordpress Theme
 
 Exclusively used by Custom A Design and Linkage UIX Design Team
 
 ## Installation Instructions
 
+This theme requires that you have GIT, NodeJS, Bower and GulpJS installed
+
 Clone theme repository in wordpress theme folder
 
     git clone git@github.com:cad-uix/cad-wp-theme.git
 
-Download Bootstrap Files via Bower
+Run bower
 
     bower install
 
-Download node modules
+Run node install
 
     npm install
 
@@ -24,7 +26,7 @@ Run gulp
 
     gulp
 
-## Theme Features
+## Theme Functions
 
 ### Client Data
 
@@ -34,28 +36,17 @@ includes an admin menu page for client data like email, phone, address and socia
 	
 $type: address, number, email, company, facebook, linkedin, twitter, google-plus
 
-## Theme Functions
-
 ### call_banner();
 
-Creates a Custom Post Type for banners, when called on theme - invokes the content-slideshow template
+Invokes the content-slideshow template
 
     <?php call_banner(); ?>
-    
-### call_post();
 
-Invokes a new WP_query for custom post types
+### call_social_links();
 
-    <?php call_post($post, $display , $category_name , $range); ?>
+Call Social list, you can add your custom class
 
-$post: Post Slug. default: post
+    <?php call_social_links( $class ); ?>
 
-$display: type of display (grid, list) default: list
 
-$category_name: category of post. default: none
-
-$range: maximum post per list default 5
-
-## License
-
-http://customadesign.com
+author: marcel badua

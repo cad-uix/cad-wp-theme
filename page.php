@@ -18,8 +18,8 @@ get_header(); ?>
     <div class="container">
     	<?php breadcrumb(); ?>
     </div>
-
-    <main id="main" class="site-main" role="main">
+   
+    <main id="main" class="site-main container" role="main">
 
     	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -28,6 +28,8 @@ get_header(); ?>
         <?php endwhile; endif; ?>
 
     </main> <!-- #main -->
+
+     </div>
 
 </div> <!-- #content-wrap -->
 

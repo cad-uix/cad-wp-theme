@@ -4,15 +4,10 @@
 
 body {
 	&.admin-bar {
-		//margin-top: 32px;
+//		margin-top: 32px;
 	}
 }
-#content-wrap {
-	margin-bottom: 6rem;
-}
-.breadcrumb {
-    margin-top: 3rem;
-}
+
 ::selection {
     background: rgba(red(@brand-primary), green(@brand-primary), blue(@brand-primary), 0.5);
     color: contrast(@brand-primary, @gray-dark, @gray-lighter, 43%);
@@ -23,52 +18,13 @@ body {
 }
 img.pull-left, img.alignleft, a.pull-left, a.alignleft {
     float: left;
-    margin: 0 1rem 1rem 0;
+    margin: 0 1rem 0 0;
 }
 img.pull-right, img.alignright, a.pull-right, a.alignright {
     float: right;
-    margin: 0 0 1rem 1rem;
+    margin: 0 0 0 1rem;
 }
 
-.label-default {
-    a {
-        color: white;
-    }
-}
-
-.view-list, .view-grid {
-    padding-bottom: @padding-base-vertical;
-    margin-bottom: @padding-base-vertical*2;
-}
-
-.commentlist {
-    margin: 0;
-    padding: 0;
-    >.comment {
-        .well();
-        list-style: none;
-    }
-    .comment-edit-link {
-        .btn();
-        .btn-default();
-        .btn-xs();
-    }
-    .comment-reply-link {
-        .btn();
-        .btn-primary();
-        .btn-xs();   
-    }
-}
-#commentform {
-    textarea {
-        .form-control();
-    }
-    #submit {
-        .btn();
-        .btn-primary();
-    }
-}
-
-table {
-    .table();
+.wp-caption-text {
+	font-size: 1.2rem;
 }

@@ -16,15 +16,23 @@
 get_header(); ?>
 
 <div id="content-wrap">
-	
 	<div class="container">
 		<?php call_banner(); ?>
 	</div>
 
+	<div class="clearfix">&nbsp;</div>
+	
 	<div class="container">
-		<section>
-			<?php call_post('post', 'grid'); ?>
-		</section>
+
+			<?php get_template_part('content', 'blog'); ?>
+	</div>
+
+	<div class="clearfix">&nbsp;</div>
+
+	<div class="container">
+
+		<?php  echo do_shortcode( '[gravityform id="1" name="Contact"]');?>
+
 	</div>
 
 </div> <!-- #content-wrap -->

@@ -46,63 +46,24 @@
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
     <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico" type="image/x-icon" />
 
-    <!--[if lt IE 9]><script src="<?php echo get_template_directory(); ?>/js/html5-3.6-respond-1.1.0.min.js"></script><![endif]-->
+    <!--[if lt IE 9]>
+    <script src="<?php echo get_template_directory(); ?>/js/html5-3.6-respond-1.1.0.min.js"></script>
+    <![endif]-->
     
     <?php wp_head(); ?>
     
-    <script> 
-        var $buoop = {c:2}; 
-        function $buo_f(){ 
-         var e = document.createElement("script"); 
-         e.src = "//browser-update.org/update.js"; 
-         document.body.appendChild(e);
-        };
-        try {document.addEventListener("DOMContentLoaded", $buo_f,false)}
-        catch(e){window.attachEvent("onload", $buo_f)}
-    </script> 
-
 </head>
 
 <body <?php body_class(); ?>>
 
-    <div id="slide-menu" class="load">
+    <!--[if lt IE 7]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
 
-
-            <?php
-
-                $defaults = array(
-                    'theme_location'  => 'off-canvas-navigation',
-                    'menu'            => 'off-canvas-navigation',
-                    'container'       => false,
-                    'container_class' => '',
-                    'container_id'    => '',
-                    'menu_class'      => 'list-unstyled off-canvas-navigation',
-                    'menu_id'         => '',
-                    'echo'            => true,
-                    'fallback_cb'     => 'wp_page_menu',
-                    'before'          => '',
-                    'after'           => '',
-                    'link_before'     => '',
-                    'link_after'      => '',
-                    'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                    'depth'           => 0,
-                    'walker'          => ''
-                );
-
-                wp_nav_menu( $defaults );
-
-                ?>
-        
-    </div>
-
-    <div id="page-wrap"> <!-- PAGE-WRAP CLOSES AT THE END OF FOOTER.PHP-->
+    <div id="page-wrap"> <!-- #page-wrap-->
     
         <a href="javascript:void(0);" class="back-to-top" data-toggle="tooltip" data-placement="left"  title="Back to Top">
-            <i class="fa fa-angle-up fa-2x"></i>
+            <span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span>
         </a>
-        
-        <button type="button" class="slide-menu-toggle" data-direction="right" data-target="#slide-menu">
-            <i class="fa fa-reorder"></i>
-        </button>
         
         <?php get_template_part( 'content', 'header' ); ?>

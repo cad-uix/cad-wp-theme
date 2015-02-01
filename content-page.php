@@ -1,6 +1,5 @@
 <?php
- /**
- *
+/**
  * Content for displaying Page
  *
  * @package oracle
@@ -10,30 +9,26 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-    <div class="container">
-        
-        <div class="page-header">
-        
-        <?php the_title( '<h1>', '</h1>' ); ?>
+    <div class="page-header">
     
-        </div>
+    <?php the_title( '<h1>', '</h1>' ); ?>
 
-        <?php if ( has_post_thumbnail() ) { ?>
+    </div>
 
-        <div class="featured-image">
-            
-            <?php the_post_thumbnail('large', array('class' => 'img-responsive')); ?>
+    <?php if ( has_post_thumbnail() ) { ?>
+
+    <div class="featured-image">
         
-        </div>
-        
-        <?php } ?>
+        <?php the_post_thumbnail('large', array('class' => 'img-responsive')); ?>
+    
+    </div>
+    
+    <?php } ?>
 
-        <div id="wp-entry" class="entry">
+    <div class="entry">
 
-            <?php the_content(); ?>
+        <?php the_content(); ?>
 
-        </div>
-        
     </div>
 
 </article>

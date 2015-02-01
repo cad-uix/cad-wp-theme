@@ -7,3 +7,7 @@
  */
 
 ?>
+
+<div id="sidebar">
+
+</div>

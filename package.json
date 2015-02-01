@@ -1,7 +1,7 @@
 {
-  "name": "oracle-wordpress-theme-framework",
-  "version": "1.0.0",
-  "description": "Oracle Wordpress Theme Framework utilizes the use of bower and gulp. to be used for bootstrap and it's powerful LESS files",
+  "name": "cad-wordpress-theme",
+  "version": "3.0.0",
+  "description": "cad Wordpress Theme utilizes the use of bower and gulp. to be used for bootstrap and it's powerful LESS files",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
