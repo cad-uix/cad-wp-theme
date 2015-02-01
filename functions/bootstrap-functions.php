@@ -59,12 +59,12 @@ endif;
 function wp_bootstrap_pagination( $args = array() ) {
     
     $defaults = array(
-        'range'           => 4,
+        'range'           => 12,
         'custom_query'    => FALSE,
-        'previous_string' => __( '&laquo;', 'text-domain' ),
-        'next_string'     => __( '&raquo;', 'text-domain' ),
-        'before_output'   => '<div class="post-nav"><ul class="pagination">',
-        'after_output'    => '</ul></div>'
+        'previous_string' => __( '←', 'text-domain' ),
+        'next_string'     => __( '→', 'text-domain' ),
+        'before_output'   => '<nav class="wp-pagination"><ul class="pagination">',
+        'after_output'    => '</ul></nav>'
     );
     
     $args = wp_parse_args( 
@@ -106,17 +106,17 @@ function wp_bootstrap_pagination( $args = array() ) {
     $previous = esc_attr( get_pagenum_link($previous) );
     
     $firstpage = esc_attr( get_pagenum_link(1) );
-    if ( $firstpage && (1 != $page) )
-        $echo .= '<li class="previous"><a href="' . $firstpage . '">' . __( 'First', 'text-domain' ) . '</a></li>';
+    //if ( $firstpage && (1 != $page) )
+    //    $echo .= '<li class="previous"><a href="' . $firstpage . '">' . __( 'First', 'text-domain' ) . '</a></li>';
     if ( $previous && (1 != $page) )
         $echo .= '<li><a href="' . $previous . '" title="' . __( 'previous', 'text-domain') . '">' . $args['previous_string'] . '</a></li>';
     
     if ( !empty($min) && !empty($max) ) {
         for( $i = $min; $i <= $max; $i++ ) {
             if ($page == $i) {
-                $echo .= '<li class="active"><span class="active">' . str_pad( (int)$i, 2, '0', STR_PAD_LEFT ) . '</span></li>';
+                $echo .= '<li class="active"><span class="active">' . str_pad( (int)$i, 1, '0', STR_PAD_LEFT ) . '</span></li>';
             } else {
-                $echo .= sprintf( '<li><a href="%s">%002d</a></li>', esc_attr( get_pagenum_link($i) ), $i );
+                $echo .= sprintf( '<li><a href="%s">%2d</a></li>', esc_attr( get_pagenum_link($i) ), $i );
             }
         }
     }
@@ -127,9 +127,9 @@ function wp_bootstrap_pagination( $args = array() ) {
         $echo .= '<li><a href="' . $next . '" title="' . __( 'next', 'text-domain') . '">' . $args['next_string'] . '</a></li>';
     
     $lastpage = esc_attr( get_pagenum_link($count) );
-    if ( $lastpage ) {
-        $echo .= '<li class="next"><a href="' . $lastpage . '">' . __( 'Last', 'text-domain' ) . '</a></li>';
-    }
+    //if ( $lastpage ) {
+    //    $echo .= '<li class="next"><a href="' . $lastpage . '">' . __( 'Last', 'text-domain' ) . '</a></li>';
+    //}
     if ( isset($echo) )
         echo $args['before_output'] . $echo . $args['after_output'];
 }
