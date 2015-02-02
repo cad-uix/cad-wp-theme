@@ -82,20 +82,20 @@ function client_about_setting (  )  {
 
 function client_facebook_setting (  )  {  
 	$options = get_option ( 'plugin_options' ) ;  
-	echo "https://www.facebook.com/<input name='plugin_options[client_facebook]' class='regular-text' type='text' value='{$options['client_facebook']}' />";
+	echo "<code>https://www.facebook.com/</code><input name='plugin_options[client_facebook]' class='regular-text' type='text' value='{$options['client_facebook']}' />";
 }
 
 function client_twitter_setting (  )  {  
 	$options = get_option ( 'plugin_options' ) ;  
-	echo "https://twitter.com/<input name='plugin_options[client_twitter]' class='regular-text' type='text' value='{$options['client_twitter']}' />";
+	echo "<code>https://twitter.com/</code><input name='plugin_options[client_twitter]' class='regular-text' type='text' value='{$options['client_twitter']}' />";
 }
 
 function client_google_plus_setting (  )  {  
 	$options = get_option ( 'plugin_options' ) ;  
-	echo "https://www.google.com/+<input name='plugin_options[client_google_plus]' class='regular-text' type='text' value='{$options['client_google_plus']}' />";
+	echo "<code>https://www.google.com/+</code><input name='plugin_options[client_google_plus]' class='regular-text' type='text' value='{$options['client_google_plus']}' />";
 }
 
 function client_linkedin_setting (  )  {  
 	$options = get_option ( 'plugin_options' ) ;  
-	echo "http://www.linkedin.com/<input name='plugin_options[client_linkedin]' class='regular-text' type='text' value='{$options['client_linkedin']}' />";
+	echo "<code>http://www.linkedin.com/</code><input name='plugin_options[client_linkedin]' class='regular-text' type='text' value='{$options['client_linkedin']}' />";
 }

@@ -20,7 +20,16 @@
                 <div class="col-sm-8">
 
                     <span>All Rights Reserved &copy;
-                        <?php echo date( "Y" ); echo " "; bloginfo( 'name'); echo " "; bloginfo( 'description' ); ?>
+                        <?php 
+                        echo date( "Y" ); 
+                        echo " | ";
+                        echo bloginfo( 'name' );
+                        echo " - ";
+                        echo bloginfo( 'description' ); 
+                        echo " | ";
+                        ?>
+                        <a href="<?php bloginfo('rss2_url'); ?>" title="<?php _e('Syndicate this site using RSS'); ?>">RSS</a>
+
                     </span>
 
                 </div>
