@@ -10,7 +10,7 @@ var   gulp            = require('gulp'),
       notify          = require('gulp-notify'),
       browserSync     = require('browser-sync');
 
-var   virtualHost     = 'http://localhost/cad-uix';
+var   virtualHost     = 'virtual_host_here';
 
 var handleErrors = function() {
   notify.onError({
