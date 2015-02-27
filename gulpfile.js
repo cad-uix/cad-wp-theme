@@ -1,4 +1,4 @@
-//npm install --save-dev browser-sync gulp gulp-concat gulp-uglify gulp-jshint gulp-less less-plugin-clean-css gulp-notify
+//npm install --save-dev browser-sync gulp gulp-concat gulp-uglify gulp-jshint gulp-less  gulp-notify
 
 var   gulp               = require('gulp'),
       concat             = require('gulp-concat'),
@@ -6,9 +6,10 @@ var   gulp               = require('gulp'),
       jshint             = require('gulp-jshint'),
       less               = require('gulp-less'),
       notify             = require('gulp-notify'),
-      browserSync        = require('browser-sync'),
-      LessPluginCleanCSS = require('less-plugin-clean-css'),
-      cleancss           =  new LessPluginCleanCSS({ advanced: true });
+      browserSync        = require('browser-sync');
+
+var minifyCSS = require('gulp-minify-css');
+var sourcemaps = require('gulp-sourcemaps');
 
 var   virtualHost     = 'virtual_host_here';
 
@@ -24,9 +25,10 @@ gulp.task('styles', function () {
   gulp.src([
     "./dev/less/bootstrap.less"
     ])
-    .pipe(less({
-      plugins: [cleancss]
-    }))
+    .pipe(less())
+    .pipe(sourcemaps.init())
+    .pipe(minifyCSS())
+    .pipe(sourcemaps.write())
     .on('error', handleErrors)
     .pipe(gulp.dest('./css'))
     .pipe(browserSync.reload({stream:true}));
