@@ -22,7 +22,7 @@ get_header();  the_post(); ?>
 
             </div>
 
-            <?php get_template_part( 'content', 'blog' ); ?>
+            <?php get_template_part( 'content', 'excerpt' ); ?>
 
         </div>
 

@@ -35,7 +35,9 @@
                 </div>
 
                 <div class="col-sm-4 text-right">  
+
                     Website by: <a href="https://www.customadesign.com" target="_blank"><i class="icon cad-icon-customadesign-icon"></i> Custom A Design</a>
+                    
                 </div>
 
             </div>

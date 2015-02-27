@@ -1,79 +1,104 @@
-//npm install --save-dev browser-sync gulp gulp-concat gulp-uglify gulp-jshint gulp-less  gulp-notify
-
-var   gulp               = require('gulp'),
-      concat             = require('gulp-concat'),
-      uglify             = require('gulp-uglify'),
-      jshint             = require('gulp-jshint'),
-      less               = require('gulp-less'),
-      notify             = require('gulp-notify'),
-      browserSync        = require('browser-sync');
-
-var minifyCSS = require('gulp-minify-css');
-var sourcemaps = require('gulp-sourcemaps');
-
-var   virtualHost     = 'virtual_host_here';
+// Load plugins
+var gulp = require('gulp'),
+  plugins = require('gulp-load-plugins')({ camelize: true }),
+  browserSync = require('browser-sync');
 
 var handleErrors = function() {
-  notify.onError({
+  plugins.notify.onError({
   title: "Compile Error",
   message: "<%= error.message %>"
   }).apply(this, arguments);
   this.emit('end');
 };
 
-gulp.task('styles', function () {
-  gulp.src([
-    "./dev/less/bootstrap.less"
-    ])
-    .pipe(less())
-    .pipe(sourcemaps.init())
-    .pipe(minifyCSS())
-    .pipe(sourcemaps.write())
-    .on('error', handleErrors)
-    .pipe(gulp.dest('./css'))
-    .pipe(browserSync.reload({stream:true}));
+// Styles
+gulp.task('styles', function() {
+  return gulp.src('dev/less/styles.less')
+  .pipe(plugins.less())
+  .pipe(plugins.plumber())
+  .on( 'error', handleErrors )
+  .pipe(plugins.minifyCss())
+  .pipe(gulp.dest('css'))
+  .pipe(plugins.notify({ message: 'Styles task complete' }));
+});
+ 
+// Vendor Plugin Scripts
+gulp.task('plugins', function() {
+  return gulp.src(['dev/js/plugins.js', 'dev/js/vendor/*.js'])
+  .pipe(plugins.plumber())
+  .pipe(plugins.uglify())
+  .pipe(plugins.concat('plugins.js'))
+  .pipe(plugins.rename({ suffix: '.min' }))
+  .pipe(gulp.dest('js'))
+  .pipe(browserSync.reload({stream:true}));
+});
+ 
+
+// Site Scripts
+gulp.task('scripts', function() {
+  return gulp.src(['dev/js/*.js', '!dev/js/plugins.js' , 'dev/js/theme.js' ])
+  .pipe(plugins.plumber())
+  .pipe(plugins.jshint('.jshintrc'))
+  .pipe(plugins.jshint.reporter('default'))
+  .pipe(plugins.uglify())
+  .pipe(plugins.concat('scripts.js'))
+  .pipe(plugins.rename({ suffix: '.min' }))
+  .pipe(gulp.dest('js'))
+  .pipe(browserSync.reload({stream:true}))
+  .pipe(plugins.notify({ message: 'Scripts task complete' }));
+});
+ 
+// Images
+gulp.task('images', function() {
+  return gulp.src('img/**/*')
+  .pipe(plugins.plumber())
+  .pipe(plugins.cache(plugins.imagemin({ optimizationLevel: 7, progressive: true, interlaced: true })))
+  .pipe(gulp.dest('img'))
+  .pipe(browserSync.reload({stream:true}))
+  .pipe(plugins.notify({ message: 'Images task complete' }));
 });
 
-gulp.task('scripts', function () {
-  gulp.src(['./dev/js/*.js'])
-    .pipe(jshint())
-    .pipe(jshint.reporter('default'))
-    .pipe(uglify())
-    .pipe(concat('scripts.js'))
-    .pipe(gulp.dest('./js'))
-    .pipe(browserSync.reload({stream:true}));
-});
-
-// Reload all Browsers
-gulp.task('bs-reload', function () {
+// Files
+gulp.task('reload', function() {
     browserSync.reload();
 });
+ 
 
-gulp.task('watch', function () {
-  gulp.watch(['./dev/less/**/*.less'], ['styles']);
-  gulp.watch(['./dev/js/**/*.js'], ['scripts']);
-  gulp.watch(['./**/*.php'], [ 'bs-reload']);
-});
-
-gulp.task('browser-sync', function () {
-  browserSync({
-        proxy: virtualHost
+gulp.task('browser-sync', function() {
+    browserSync({
+        proxy: "http://localhost/development/"
+        // server: {
+        //     baseDir: ""
+        // }
     });
 });
 
-gulp.task('bower-copy', function(){
-  gulp.src('./bower_components/bootstrap/dist/fonts/**/*.*')
-  .pipe(gulp.dest('./fonts'));
-  gulp.src('./bower_components/bootstrap/dist/js/**/*.*')
-  .pipe(gulp.dest('./js'));
-  gulp.src('./bower_components/jquery-prettyPhoto/**/*.*')
-  .pipe(gulp.dest('./vendor/jquery-prettyPhoto'));
+// Watch
+gulp.task('watch', function() {
+ 
+  // Watch .less files
+  gulp.watch('dev/less/**/*.less', ['styles']);
+ 
+  // Watch .js files
+  gulp.watch('dev/js/**/*.js', ['plugins', 'scripts']);
+ 
+  // Watch image files
+  gulp.watch('assets/img/**/*', ['images']);
+
+  // Watch files
+  gulp.watch('**/*.php', ['reload']);
+ 
 });
 
-gulp.task('default', [
-    'bower-copy', 
-    'styles', 
-    'scripts', 
-    'browser-sync', 
-    'watch'
-]);
+gulp.task('copy', function(){
+  gulp.src('./bower_components/bootstrap/dist/fonts/**/*.*')
+    .pipe(gulp.dest('./fonts'));
+  gulp.src('./bower_components/bootstrap/dist/js/bootstrap.min.js')
+    .pipe(gulp.dest('./dev/js/vendor'));
+});
+
+// Build task
+gulp.task('build', ['copy', 'styles', 'plugins', 'scripts', 'images']);
+
+// Default task
+gulp.task('default', [ 'copy', 'styles', 'plugins', 'scripts', 'images', 'watch', 'browser-sync']);

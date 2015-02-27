@@ -53,7 +53,7 @@ if ( $banner_query->have_posts() ) : ?>
                     <?php the_title("<h2>", "</h2>"); ?>
                     
                     <p>
-                        <?php echo get_post_meta( get_the_ID(),'banner_text',true ); ?>
+                        <p> <?php the_content(); ?></p>
                     </p>
                     
                 </div>

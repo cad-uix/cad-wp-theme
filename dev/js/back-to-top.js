@@ -11,10 +11,8 @@ jQuery(function($){
     var offset = 400;
 
     $(document).scroll(function() {
-        
-        scroll_pos = $(this).scrollTop();
-        
-        if (scroll_pos > offset) {
+                
+        if ( $(this).scrollTop() > offset) {
             $('.back-to-top').addClass('show');
         } else {
             $('.back-to-top').removeClass('show');

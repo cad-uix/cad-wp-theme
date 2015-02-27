@@ -63,14 +63,14 @@ function enqueue_scripts_and_styles() {
 
     wp_enqueue_style( 'style', get_stylesheet_uri() );
 
-    wp_register_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css', null, 1.0, 'screen' );
-    wp_enqueue_style( 'bootstrap' );
+    wp_register_style( 'cad-wp-theme', get_template_directory_uri() . '/css/styles.css', null, 1.0, 'screen' );
+    wp_enqueue_style( 'cad-wp-theme' );
     
-    wp_register_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), 1.0, true );
-    wp_enqueue_script( 'bootstrap' );
+    wp_register_script( 'vendor', get_template_directory_uri() . '/js/plugins.min.js', array( 'jquery' ), 1.0, true );
+    wp_enqueue_script( 'vendor' );
 
-    wp_register_script( 'scripts', get_template_directory_uri() . '/js/scripts.js', array( 'jquery' ), 1.0, true );
-    wp_enqueue_script( 'scripts' );
+    wp_register_script( 'cad-wp-theme', get_template_directory_uri() . '/js/scripts.min.js', array( 'jquery' ), 1.0, true );
+    wp_enqueue_script( 'cad-wp-theme' );
 
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_scripts_and_styles' );
@@ -97,3 +97,13 @@ require get_template_directory() . '/functions/social-list.php';
  * Bootstrap Nav Walker
  */
 require get_template_directory() . '/functions/wp_bootstrap_navwalker.php';
+
+/**
+ * Required Plugins
+ */
+require get_template_directory() . '/functions/plugin.php';
+
+/**
+ * Meta for Sidebar
+ */
+//require get_template_directory() . '/functions/sidebar.php';

@@ -26,21 +26,5 @@ Run gulp
 
     gulp
 
-## Theme Functions
-
-### Client Data
-
-includes an admin menu page for client data like email, phone, address and social links, can be called on template by using
-
-    <?php echo call_data( $type ); ?>
-	
-$type: address, number, email, company, facebook, linkedin, twitter, google-plus
-
-### call_social_links();
-
-Call Social list, you can add your custom class
-
-    <?php call_social_links( $class ); ?>
-
 
 author: marcel badua

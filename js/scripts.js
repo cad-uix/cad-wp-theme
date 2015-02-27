@@ -1,1 +1,0 @@
-jQuery(function(o){var t=400;o(document).scroll(function(){scroll_pos=o(this).scrollTop(),scroll_pos>t?o(".back-to-top").addClass("show"):o(".back-to-top").removeClass("show")}),o(".back-to-top").click(function(t){return t.preventDefault(),o("html, body").animate({scrollTop:0},500),!1})});

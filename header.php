@@ -63,7 +63,7 @@
     <div id="page-wrap"> <!-- #page-wrap-->
     
         <a href="javascript:void(0);" class="back-to-top" data-toggle="tooltip" data-placement="left"  title="Back to Top">
-            <span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span>
+            <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
         </a>
         
         <?php get_template_part( 'content', 'header' ); ?>

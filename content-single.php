@@ -17,7 +17,7 @@
     
     <?php include (TEMPLATEPATH . '/inc/meta.php' ); ?>
     
-    <?php if ( has_post_thumbnail() )  the_post_thumbnail( 'full', array( 'class' => 'img-responsive' ) ); ?> 
+    <?php if ( has_post_thumbnail() )  the_post_thumbnail( 'thumbnail', array( 'class' => 'img-responsive' ) ); ?> 
     
     <div class="entry">
         

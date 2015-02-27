@@ -1,32 +1,26 @@
 {
-  "name": "cad-wordpress-theme",
-  "version": "3.0.0",
-  "description": "cad Wordpress Theme utilizes the use of bower and gulp. to be used for bootstrap and it's powerful LESS files",
+  "name": "cad-wp-theme",
+  "version": "1.0.0",
+  "description": "cad-wp-theme",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "http://github.com/cad-uix/cad-wp-theme.git"
-  },
-  "author": "marcel badua",
+  "author": "Marcel Badua",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/cad-uix/cad-wp-theme/issues"
-  },
-  "homepage": "https://github.com/cad-uix/cad-wp-theme",
   "devDependencies": {
-    "browser-sync": "^1.5.2",
-    "gulp": "^3.8.8",
-    "gulp-concat": "^2.4.1",
-    "gulp-jshint": "^1.8.5",
-    "gulp-less": "^1.3.6",
-    "gulp-minify": "0.0.5",
-    "gulp-minify-css": "^0.3.10",
-    "gulp-notify": "^1.8.0",
-    "gulp-sourcemaps": "^1.5.0",
-    "gulp-uglify": "^1.0.1",
-    "less-plugin-clean-css": "^1.5.0"
+    "browser-sync": "^2.2.1",
+    "gulp": "^3.8.11",
+    "gulp-cache": "^0.2.8",
+    "gulp-concat": "^2.5.2",
+    "gulp-imagemin": "^2.2.1",
+    "gulp-jshint": "^1.9.2",
+    "gulp-less": "^3.0.1",
+    "gulp-load-plugins": "^0.8.0",
+    "gulp-minify-css": "^0.4.6",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^0.6.6",
+    "gulp-rename": "^1.2.0",
+    "gulp-uglify": "^1.1.0"
   }
 }
