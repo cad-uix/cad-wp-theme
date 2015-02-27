@@ -1,14 +1,14 @@
-//npm install --save-dev browser-sync gulp gulp-concat gulp-uglify gulp-jshint gulp-less gulp-csscomb gulp-minify-css gulp-notify
+//npm install --save-dev browser-sync gulp gulp-concat gulp-uglify gulp-jshint gulp-less less-plugin-clean-css gulp-notify
 
-var   gulp            = require('gulp'),
-      concat          = require('gulp-concat'),
-      uglify          = require('gulp-uglify'),
-      jshint          = require('gulp-jshint'),
-      less            = require('gulp-less'),
-      csscomb         = require('gulp-csscomb'),
-      minify          = require('gulp-minify-css'),
-      notify          = require('gulp-notify'),
-      browserSync     = require('browser-sync');
+var   gulp               = require('gulp'),
+      concat             = require('gulp-concat'),
+      uglify             = require('gulp-uglify'),
+      jshint             = require('gulp-jshint'),
+      less               = require('gulp-less'),
+      notify             = require('gulp-notify'),
+      browserSync        = require('browser-sync'),
+      LessPluginCleanCSS = require('less-plugin-clean-css'),
+      cleancss           =  new LessPluginCleanCSS({ advanced: true });
 
 var   virtualHost     = 'virtual_host_here';
 
@@ -24,10 +24,10 @@ gulp.task('styles', function () {
   gulp.src([
     "./dev/less/bootstrap.less"
     ])
-    .pipe(less())
+    .pipe(less({
+      plugins: [cleancss]
+    }))
     .on('error', handleErrors)
-    .pipe(csscomb())
-    .pipe(minify())
     .pipe(gulp.dest('./css'))
     .pipe(browserSync.reload({stream:true}));
 });
