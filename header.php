@@ -46,9 +46,12 @@
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
     <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico" type="image/x-icon" />
 
+
     <!--[if lt IE 9]>
-    <script src="<?php echo get_template_directory(); ?>/js/html5-3.6-respond-1.1.0.min.js"></script>
+        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <script>window.html5 || document.write('<script src="<?php echo get_template_directory(); ?>/js/vendor/html5shiv.js"><\/script>')</script>
     <![endif]-->
+
     
     <?php wp_head(); ?>
     
@@ -67,3 +70,5 @@
         </a>
         
         <?php get_template_part( 'content', 'header' ); ?>
+
+        <div id="content-wrap">

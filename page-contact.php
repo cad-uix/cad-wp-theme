@@ -10,7 +10,7 @@
 
 get_header(); ?>
 
-    <div id="content-wrap">
+
 
         <main class="container">
 
@@ -124,7 +124,7 @@ get_header(); ?>
 
         </main>
 
-    </div>
+
     
 <div class="clearfix">&nbsp;</div>
 

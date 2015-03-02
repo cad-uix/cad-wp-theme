@@ -1,58 +1,49 @@
-<?php
+<?php 
 
 /**
- * Adds a box to the main column on the Post and Page edit screens.
+ * Adds a box to the main column on the Post add/edit screens.
  */
-function sidebar_option_add_meta_box() {
+function wdm_add_meta_box() {
 
-	$screens = array( 'post', 'page' );
+    $screens = array( 'post', 'page' );
 
-	foreach ( $screens as $screen ) {
+    foreach ( $screens as $screen ) {
 
-		add_meta_box(
-			'sidebar_option_sectionid',
-			__( 'Show Sidebar', 'sidebar_option_textdomain' ),
-			'sidebar_option_meta_box_callback',
-			$screen
-		);
-	}
+         add_meta_box(
+                'wdm_sectionid', 'Show Sidebar', 'wdm_meta_box_callback', $screen, 'side'
+        ); //you can change the 4th paramter i.e. post to custom post type name, if you want it for something else
+
+    }
+
+
+       
 }
-add_action( 'add_meta_boxes', 'sidebar_option_add_meta_box' );
+
+add_action( 'add_meta_boxes', 'wdm_add_meta_box' );
 
 /**
  * Prints the box content.
  * 
  * @param WP_Post $post The object for the current post/page.
  */
-function sidebar_option_meta_box_callback( $post ) {
+function wdm_meta_box_callback( $post ) {
 
-	// Add an nonce field so we can check for it later.
-	wp_nonce_field( 'sidebar_option_meta_box', 'sidebar_option_meta_box_nonce' );
+        // Add an nonce field so we can check for it later.
+        wp_nonce_field( 'wdm_meta_box', 'wdm_meta_box_nonce' );
 
-	/*
-	 * Use get_post_meta() to retrieve an existing value
-	 * from the database and use the value for the form.
-	 */
-	$value = get_post_meta( $post->ID, '_option_meta_value_key', true );
+        /*
+         * Use get_post_meta() to retrieve an existing value
+         * from the database and use the value for the form.
+         */
+        $value = get_post_meta( $post->ID, 'sidebar_meta', true ); //sidebar_meta is a meta_key. Change it to whatever you want
 
-	// echo '<label for="sidebar_option_new_field">';
-	// _e( 'Show the sidebar in the page', 'sidebar_option_textdomain' );
-	// echo '</label> ';
-	// echo '
-	
-	// <input type="text" id="sidebar_option_new_field" name="sidebar_option_new_field" value="' . esc_attr( $value ) . '" size="25" />
-
-	// <input type="radio" name="sex" value="male">Male<br>
-	// <input type="radio" name="sex" value="female">Female
-
-	// ';
-
-	?>
-        <label for="sidebar_option_new_field"><?php _e( "Choose value:", 'choose_value' ); ?></label>
+        ?>
+        <label for="wdm_new_field"><?php _e( "Choose value:", 'choose_value' ); ?></label>
         <br />  
-        <input type="checkbox" name="sidebar_option_new_field" value="value1" <?php checked( $value, 'checked' ); ?> >Show<br>
-        
-      
+        <input type="radio" name="the_name_of_the_radio_buttons" value="no_sidebar" <?php checked( $value, 'no_sidebar' ); ?> >No Sidebar<br>
+        <input type="radio" name="the_name_of_the_radio_buttons" value="left_sidebar" <?php checked( $value, 'left_sidebar' ); ?> >Left Sidebar<br>
+        <input type="radio" name="the_name_of_the_radio_buttons" value="right_sidebar" <?php checked( $value, 'right_sidebar' ); ?> >Right Sidebar<br>
+
         <?php
 
 }
@@ -62,53 +53,40 @@ function sidebar_option_meta_box_callback( $post ) {
  *
  * @param int $post_id The ID of the post being saved.
  */
-function sidebar_option_save_meta_box_data( $post_id ) {
+function wdm_save_meta_box_data( $post_id ) {
 
-	/*
-	 * We need to verify this came from our screen and with proper authorization,
-	 * because the save_post action can be triggered at other times.
-	 */
+        /*
+         * We need to verify this came from our screen and with proper authorization,
+         * because the save_post action can be triggered at other times.
+         */
 
-	// Check if our nonce is set.
-	if ( ! isset( $_POST['sidebar_option_meta_box_nonce'] ) ) {
-		return;
-	}
+        // Check if our nonce is set.
+        if ( !isset( $_POST['wdm_meta_box_nonce'] ) ) {
+                return;
+        }
 
-	// Verify that the nonce is valid.
-	if ( ! wp_verify_nonce( $_POST['sidebar_option_meta_box_nonce'], 'sidebar_option_meta_box' ) ) {
-		return;
-	}
+        // Verify that the nonce is valid.
+        if ( !wp_verify_nonce( $_POST['wdm_meta_box_nonce'], 'wdm_meta_box' ) ) {
+                return;
+        }
 
-	// If this is an autosave, our form has not been submitted, so we don't want to do anything.
-	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
-		return;
-	}
+        // If this is an autosave, our form has not been submitted, so we don't want to do anything.
+        if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+                return;
+        }
 
-	// Check the user's permissions.
-	if ( isset( $_POST['post_type'] ) && 'page' == $_POST['post_type'] ) {
+        // Check the user's permissions.
+        if ( !current_user_can( 'edit_post', $post_id ) ) {
+                return;
+        }
 
-		if ( ! current_user_can( 'edit_page', $post_id ) ) {
-			return;
-		}
 
-	} else {
+        // Sanitize user input.
+        $new_meta_value = ( isset( $_POST['the_name_of_the_radio_buttons'] ) ? sanitize_html_class( $_POST['the_name_of_the_radio_buttons'] ) : '' );
 
-		if ( ! current_user_can( 'edit_post', $post_id ) ) {
-			return;
-		}
-	}
+        // Update the meta field in the database.
+        update_post_meta( $post_id, 'sidebar_meta', $new_meta_value );
 
-	/* OK, it's safe for us to save the data now. */
-	
-	// Make sure that it is set.
-	if ( ! isset( $_POST['sidebar_option_new_field'] ) ) {
-		return;
-	}
-
-	// Sanitize user input.
-	$my_data = sanitize_text_field( $_POST['sidebar_option_new_field'] );
-
-	// Update the meta field in the database.
-	update_post_meta( $post_id, '_my_meta_value_key', $my_data );
 }
-add_action( 'save_post', 'sidebar_option_save_meta_box_data' );
+
+add_action( 'save_post', 'wdm_save_meta_box_data' );

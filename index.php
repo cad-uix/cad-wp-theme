@@ -15,7 +15,7 @@
 
 get_header(); ?>
 
-<div id="content-wrap">
+
 
 	<div class="container">
 
@@ -39,6 +39,6 @@ get_header(); ?>
 
 	</div>
 
-</div> <!-- #content-wrap -->
+
 
 <?php get_footer(); ?>

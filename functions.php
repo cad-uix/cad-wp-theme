@@ -32,6 +32,20 @@ if ( ! function_exists( '_cad_theme_setup' ) ) :
             'sidebar-navigation' => __( 'Sidebar Navigation' )
         ));
 
+        /*
+         * Sidebar Widgets
+         */
+        register_sidebar(array(
+            'name' => 'Sidebar Widgets',
+            'id'   => 'sidebar-widgets',
+            'description'   => 'These are widgets for the sidebar.',
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h2>',
+            'after_title'   => '</h2>'
+        ));
+    
+
     }
 endif; 
 add_action( 'after_setup_theme', '_cad_theme_setup' );
@@ -63,7 +77,7 @@ function enqueue_scripts_and_styles() {
 
     wp_enqueue_style( 'style', get_stylesheet_uri() );
 
-    wp_register_style( 'cad-wp-theme', get_template_directory_uri() . '/css/styles.css', null, 1.0, 'screen' );
+    wp_register_style( 'cad-wp-theme', get_template_directory_uri() . '/css/styles.min.css', null, 1.0, 'screen' );
     wp_enqueue_style( 'cad-wp-theme' );
     
     wp_register_script( 'vendor', get_template_directory_uri() . '/js/plugins.min.js', array( 'jquery' ), 1.0, true );
@@ -106,4 +120,4 @@ require get_template_directory() . '/functions/plugin.php';
 /**
  * Meta for Sidebar
  */
-//require get_template_directory() . '/functions/sidebar.php';
+require get_template_directory() . '/functions/sidebar.php';

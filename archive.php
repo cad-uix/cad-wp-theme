@@ -10,7 +10,7 @@
 
 get_header(); ?>
    
-   <div id="content-wrap">
+
 
         <div class="container">
             <?php breadcrumb(); ?>
@@ -97,8 +97,6 @@ get_header(); ?>
         <?php endif; ?>
 
         </div>
-
-    </div>
 
     <div class="clearfix">&nbsp;</div>
 

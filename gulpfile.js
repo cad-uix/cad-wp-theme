@@ -13,12 +13,13 @@ var handleErrors = function() {
 
 // Styles
 gulp.task('styles', function() {
-  return gulp.src('dev/less/styles.less')
+  return gulp.src('./dev/less/styles.less')
   .pipe(plugins.less())
   .pipe(plugins.plumber())
   .on( 'error', handleErrors )
   .pipe(plugins.minifyCss())
-  .pipe(gulp.dest('css'))
+  .pipe(plugins.rename({ suffix: '.min' }))
+  .pipe(gulp.dest('./css/'))
   .pipe(plugins.notify({ message: 'Styles task complete' }));
 });
  
@@ -29,7 +30,7 @@ gulp.task('plugins', function() {
   .pipe(plugins.uglify())
   .pipe(plugins.concat('plugins.js'))
   .pipe(plugins.rename({ suffix: '.min' }))
-  .pipe(gulp.dest('js'))
+  .pipe(gulp.dest('js/'))
   .pipe(browserSync.reload({stream:true}));
 });
  
@@ -43,7 +44,7 @@ gulp.task('scripts', function() {
   .pipe(plugins.uglify())
   .pipe(plugins.concat('scripts.js'))
   .pipe(plugins.rename({ suffix: '.min' }))
-  .pipe(gulp.dest('js'))
+  .pipe(gulp.dest('js/'))
   .pipe(browserSync.reload({stream:true}))
   .pipe(plugins.notify({ message: 'Scripts task complete' }));
 });
@@ -53,7 +54,7 @@ gulp.task('images', function() {
   return gulp.src('img/**/*')
   .pipe(plugins.plumber())
   .pipe(plugins.cache(plugins.imagemin({ optimizationLevel: 7, progressive: true, interlaced: true })))
-  .pipe(gulp.dest('img'))
+  .pipe(gulp.dest('img/'))
   .pipe(browserSync.reload({stream:true}))
   .pipe(plugins.notify({ message: 'Images task complete' }));
 });

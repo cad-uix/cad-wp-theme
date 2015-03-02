@@ -8,7 +8,7 @@
 
 get_header(); ?>
 
-	<div id="content-wrap">
+
 		
 	    <div class="container">
 
@@ -54,8 +54,6 @@ get_header(); ?>
 
 	    </main> <!-- #main -->
 	   
-	</div>
-
 	<div class="clearfix">&nbsp;</div>
 
 <?php get_footer(); ?>

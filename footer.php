@@ -8,7 +8,9 @@
  * @author marcelbadua
  */
 ?>
-
+    
+    </div> <!-- #content-wrap -->
+    
     <?php get_template_part( 'content', 'footer' ); ?>
 
     <div id="colophon">

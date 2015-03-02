@@ -13,27 +13,66 @@
 
 get_header(); ?>
 
-<div id="content-wrap">
-
     <div class="container">
 
-    	<?php breadcrumb(); ?>
-    	
+        <?php breadcrumb(); ?>
+
     </div>
-   
-    <main id="main" class="site-main container" role="main">
 
-    	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+    <?php while (have_posts()) : the_post(); ?>
+        
+        <div class="container">
+            
+            <div class="row">
+                
+                <?php 
+                    
+                    switch ( get_post_meta( $post->ID, 'sidebar_meta', true )  ) {
+                        case 'left_sidebar': 
+                            $col = 'col-sm-9';
+                            ?>
+                            <div class="col-sm-3">
+                                <?php get_sidebar(); ?>
+                            </div>
+                            <?php
+                            break;
 
-        <?php get_template_part( 'content', 'page' ); ?>
+                        case 'right_sidebar': 
+                            $col = 'col-sm-9 col-sm-pull-3';
+                            ?>
+                            <div class="col-sm-3 col-sm-push-9">
+                                <?php get_sidebar(); ?>
+                            </div>
+                            <?php
+                            break;
+                        
+                        default:
+                            $col = 'col-sm-12';
+                            break;
+                    }
 
-        <?php endwhile; endif; ?>
+                ?>
 
-    </main> <!-- #main -->
+                <main id="main" class="site-main <?php echo $col; ?> " role="main">
 
-     </div>
+                    <?php get_template_part( 'content', 'page' ); ?>
 
-</div> <!-- #content-wrap -->
+                    <div class="clearfix">&nbsp;</div>
+
+                    <div id="comment-wrap">
+                        
+                        <?php comments_template(); ?> 
+
+                    </div>
+
+                </main> <!-- #main -->
+
+            </div>
+
+        </div>
+
+    <?php endwhile; ?>
+
 
 <div class="clearfix">&nbsp;</div>
 

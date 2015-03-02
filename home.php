@@ -10,7 +10,7 @@
 
 get_header();  the_post(); ?>
 
-    <div id="content-wrap">
+
 
         <div class="container">
 
@@ -26,7 +26,7 @@ get_header();  the_post(); ?>
 
         </div>
 
-    </div>
+
 
     <div class="clearfix">&nbsp;</div>
 
