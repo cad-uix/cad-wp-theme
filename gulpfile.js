@@ -20,6 +20,7 @@ gulp.task('styles', function() {
   .pipe(plugins.minifyCss())
   .pipe(plugins.rename({ suffix: '.min' }))
   .pipe(gulp.dest('./css/'))
+  .pipe(browserSync.reload({stream:true}))
   .pipe(plugins.notify({ message: 'Styles task complete' }));
 });
  
